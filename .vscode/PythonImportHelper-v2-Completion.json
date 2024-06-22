@@ -1,0 +1,2437 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "user_passes_test",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Sum",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "MiddlewareMixin",
+        "importPath": "django.utils.deprecation",
+        "description": "django.utils.deprecation",
+        "isExtraImport": true,
+        "detail": "django.utils.deprecation",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views",
+        "description": "django.views",
+        "isExtraImport": true,
+        "detail": "django.views",
+        "documentation": {}
+    },
+    {
+        "label": "pisa",
+        "importPath": "xhtml2pdf",
+        "description": "xhtml2pdf",
+        "isExtraImport": true,
+        "detail": "xhtml2pdf",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "make_password",
+        "importPath": "django.contrib.auth.hashers",
+        "description": "django.contrib.auth.hashers",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.hashers",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "env.Scripts.render-script",
+        "description": "env.Scripts.render-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "env.Scripts.render-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "env.Scripts.render-script",
+        "description": "env.Scripts.render-script",
+        "peekOfCode": "__requires__ = 'render==1.0.0'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "env.Scripts.render-script",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "restaurent.asgi",
+        "description": "restaurent.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "restaurent.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n#try\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-fh&9^^id#p4#4az39xs)rl-^$i_#0+m@g=r$@mb(s01-%0r0ut'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-fh&9^^id#p4#4az39xs)rl-^$i_#0+m@g=r$@mb(s01-%0r0ut'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'jazzmin',\n    'rest_framework',\n    # 'xhtml2pdf',\n    'django.contrib.admin',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'jazzmin',\n    'rest_framework',\n    # 'xhtml2pdf',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "ALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'jazzmin',\n    'rest_framework',\n    # 'xhtml2pdf',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'jazzmin',\n    'rest_framework',\n    # 'xhtml2pdf',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTHENTICATION_BACKENDS",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'django.contrib.auth.backends.ModelBackend',\n]\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'web.middleware.LoginRequiredMiddleware',\n    # 'restaurentapp.middleware.RefreshPageMiddleware',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_URL",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "LOGIN_URL = '/'\n# AUTH_USER_MODEL = 'web.User'\nROOT_URLCONF = 'restaurent.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates/')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "ROOT_URLCONF = 'restaurent.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates/')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates/')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'restaurent.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static',\n]",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static',\n]\n# Default primary key field type",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static',\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static',\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static',\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / 'static',\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "restaurent.settings",
+        "description": "restaurent.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "restaurent.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "restaurent.urls",
+        "description": "restaurent.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('web.urls')),\n    path('restaurent/',include('restaurentapp.urls')),\n]+static(MEDIA_URL, document_root=MEDIA_ROOT)",
+        "detail": "restaurent.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "restaurent.wsgi",
+        "description": "restaurent.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "restaurent.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0001_initial",
+        "description": "restaurentapp.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = []\n    operations = [\n        migrations.CreateModel(\n            name=\"Category\",\n            fields=[\n                (\"id\", models.BigAutoField(primary_key=True, serialize=False)),\n                (\"name\", models.CharField(max_length=300)),\n            ],",
+        "detail": "restaurentapp.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0002_table_occupied",
+        "description": "restaurentapp.migrations.0002_table_occupied",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"table\",\n            name=\"occupied\",\n            field=models.BooleanField(default=1),\n            preserve_default=False,",
+        "detail": "restaurentapp.migrations.0002_table_occupied",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0003_table_floor",
+        "description": "restaurentapp.migrations.0003_table_floor",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0002_table_occupied\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"table\",\n            name=\"floor\",\n            field=models.ForeignKey(\n                default=2,",
+        "detail": "restaurentapp.migrations.0003_table_floor",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0004_mealitem_image",
+        "description": "restaurentapp.migrations.0004_mealitem_image",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0003_table_floor\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"mealitem\",\n            name=\"image\",\n            field=models.ImageField(blank=True, null=True, upload_to=\"Meal\"),\n        ),",
+        "detail": "restaurentapp.migrations.0004_mealitem_image",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0005_category_icon",
+        "description": "restaurentapp.migrations.0005_category_icon",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0004_mealitem_image\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"category\",\n            name=\"icon\",\n            field=models.TextField(default=3),\n            preserve_default=False,",
+        "detail": "restaurentapp.migrations.0005_category_icon",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0006_alter_customer_id_alter_order_id_alter_orderitem_id",
+        "description": "restaurentapp.migrations.0006_alter_customer_id_alter_order_id_alter_orderitem_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0005_category_icon\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"customer\",\n            name=\"id\",\n            field=models.BigAutoField(primary_key=True, serialize=False),\n        ),",
+        "detail": "restaurentapp.migrations.0006_alter_customer_id_alter_order_id_alter_orderitem_id",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0007_rename_table_tabledata",
+        "description": "restaurentapp.migrations.0007_rename_table_tabledata",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0006_alter_customer_id_alter_order_id_alter_orderitem_id\"),\n    ]\n    operations = [\n        migrations.RenameModel(\n            old_name=\"Table\",\n            new_name=\"TableData\",\n        ),\n    ]",
+        "detail": "restaurentapp.migrations.0007_rename_table_tabledata",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0008_orderitem_is_ready",
+        "description": "restaurentapp.migrations.0008_orderitem_is_ready",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0007_rename_table_tabledata\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"orderitem\",\n            name=\"is_ready\",\n            field=models.BooleanField(default=1),\n            preserve_default=False,",
+        "detail": "restaurentapp.migrations.0008_orderitem_is_ready",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0009_remove_orderitem_is_ready",
+        "description": "restaurentapp.migrations.0009_remove_orderitem_is_ready",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0008_orderitem_is_ready\"),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name=\"orderitem\",\n            name=\"is_ready\",\n        ),\n    ]",
+        "detail": "restaurentapp.migrations.0009_remove_orderitem_is_ready",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0010_orderitem_is_ready",
+        "description": "restaurentapp.migrations.0010_orderitem_is_ready",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0009_remove_orderitem_is_ready\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"orderitem\",\n            name=\"is_ready\",\n            field=models.BooleanField(default=0),\n            preserve_default=False,",
+        "detail": "restaurentapp.migrations.0010_orderitem_is_ready",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0011_notification",
+        "description": "restaurentapp.migrations.0011_notification",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0010_orderitem_is_ready\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"Notification\",\n            fields=[\n                (\n                    \"id\",",
+        "detail": "restaurentapp.migrations.0011_notification",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0012_alter_mealitem_image",
+        "description": "restaurentapp.migrations.0012_alter_mealitem_image",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0011_notification\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"mealitem\",\n            name=\"image\",\n            field=models.ImageField(default=2, upload_to=\"Meal\"),\n            preserve_default=False,",
+        "detail": "restaurentapp.migrations.0012_alter_mealitem_image",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0013_organizationdetail",
+        "description": "restaurentapp.migrations.0013_organizationdetail",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0012_alter_mealitem_image\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"OrganizationDetail\",\n            fields=[\n                (\"id\", models.BigAutoField(primary_key=True, serialize=False)),\n                (\"name\", models.CharField(blank=True, max_length=400, null=True)),",
+        "detail": "restaurentapp.migrations.0013_organizationdetail",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "restaurentapp.migrations.0014_billreport",
+        "description": "restaurentapp.migrations.0014_billreport",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"restaurentapp\", \"0013_organizationdetail\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"BillReport\",\n            fields=[\n                (\"id\", models.BigAutoField(primary_key=True, serialize=False)),\n                (",
+        "detail": "restaurentapp.migrations.0014_billreport",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(MealItem)\nclass MealItemAdmin(admin.ModelAdmin):\n   list_display = ('name','category','price')\n   list_display_links = ('name','category','price')\n@admin.register(Order)\nclass OrderAdmin(admin.ModelAdmin):\n   list_display = ('customer','table')",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "MealItemAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class MealItemAdmin(admin.ModelAdmin):\n   list_display = ('name','category','price')\n   list_display_links = ('name','category','price')\n@admin.register(Order)\nclass OrderAdmin(admin.ModelAdmin):\n   list_display = ('customer','table')\n   list_display_links = ('customer','table')\n@admin.register(Customer)\nclass CustomerAdmin(admin.ModelAdmin):\n   list_display = ('name','phone')",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "OrderAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n   list_display = ('customer','table')\n   list_display_links = ('customer','table')\n@admin.register(Customer)\nclass CustomerAdmin(admin.ModelAdmin):\n   list_display = ('name','phone')\n   list_display_links = ('name','phone')\n@admin.register(OrderItem)\nclass OrderItemAdmin(admin.ModelAdmin):\n   list_display = ('order','meal','quantity','price')",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class CustomerAdmin(admin.ModelAdmin):\n   list_display = ('name','phone')\n   list_display_links = ('name','phone')\n@admin.register(OrderItem)\nclass OrderItemAdmin(admin.ModelAdmin):\n   list_display = ('order','meal','quantity','price')\n   list_display_links = ('order','meal','quantity','price')\n@admin.register(Floor)\nclass FloorAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\")",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "OrderItemAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class OrderItemAdmin(admin.ModelAdmin):\n   list_display = ('order','meal','quantity','price')\n   list_display_links = ('order','meal','quantity','price')\n@admin.register(Floor)\nclass FloorAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\")\n   list_display_links = ('id',\"name\")\n@admin.register(TableData)\nclass TableDataAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\")",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "FloorAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class FloorAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\")\n   list_display_links = ('id',\"name\")\n@admin.register(TableData)\nclass TableDataAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\")\n   list_display_links = ('id',\"name\")\n@admin.register(BillReport)\nclass BillReportAdmin(admin.ModelAdmin):\n   list_display = ('id',\"order_id\")",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "TableDataAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class TableDataAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\")\n   list_display_links = ('id',\"name\")\n@admin.register(BillReport)\nclass BillReportAdmin(admin.ModelAdmin):\n   list_display = ('id',\"order_id\")\n   list_display_links = ('id',\"order_id\")\n@admin.register(OrganizationDetail)\nclass OrganizationDetailAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\",\"address\",\"phone\")",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "BillReportAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class BillReportAdmin(admin.ModelAdmin):\n   list_display = ('id',\"order_id\")\n   list_display_links = ('id',\"order_id\")\n@admin.register(OrganizationDetail)\nclass OrganizationDetailAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\",\"address\",\"phone\")\n   list_display_links = ('id',\"name\",\"address\",\"phone\")",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "OrganizationDetailAdmin",
+        "kind": 6,
+        "importPath": "restaurentapp.admin",
+        "description": "restaurentapp.admin",
+        "peekOfCode": "class OrganizationDetailAdmin(admin.ModelAdmin):\n   list_display = ('id',\"name\",\"address\",\"phone\")\n   list_display_links = ('id',\"name\",\"address\",\"phone\")",
+        "detail": "restaurentapp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "RestaurentappConfig",
+        "kind": 6,
+        "importPath": "restaurentapp.apps",
+        "description": "restaurentapp.apps",
+        "peekOfCode": "class RestaurentappConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"restaurentapp\"",
+        "detail": "restaurentapp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class Category(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   name = models.CharField(max_length=300)\n   icon = models.TextField()\n   class Meta:\n      verbose_name = 'Category'\n      verbose_name_plural = 'Categories'\n   def __str__(self):\n       return self.name\nclass MealItem(models.Model):",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "MealItem",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class MealItem(models.Model):\n   id=  models.BigAutoField(primary_key=True)\n   name = models.CharField(max_length=300)\n   category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name=\"mealitem\")\n   image = models.ImageField(upload_to='Meal')\n   ingredients = models.TextField()\n   price = models.IntegerField(default=0)\n   updated_at = models.DateField(auto_now_add=True)\n   created_at = models.DateField(auto_now=True)\n   def __str__(self):",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Floor",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class Floor(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   name = models.CharField(max_length=300)\n   def __str__(self):\n       return self.name\nclass TableData(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   name = models.CharField(max_length=300)\n   floor = models.ForeignKey(Floor, on_delete=models.CASCADE,related_name=\"table\")\n   occupied = models.BooleanField()",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TableData",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class TableData(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   name = models.CharField(max_length=300)\n   floor = models.ForeignKey(Floor, on_delete=models.CASCADE,related_name=\"table\")\n   occupied = models.BooleanField()\n   def __str__(self):\n       return self.name\nclass Customer(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=100)",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Customer",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class Customer(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=100)\n    phone = models.CharField(max_length=15)\n    def __str__(self):\n        return self.name\nclass Order(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    customer = models.ForeignKey(Customer, related_name='orders', on_delete=models.CASCADE)\n    table = models.ForeignKey(TableData, related_name='orders', on_delete=models.SET_NULL, null=True, blank=True)",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class Order(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    customer = models.ForeignKey(Customer, related_name='orders', on_delete=models.CASCADE)\n    table = models.ForeignKey(TableData, related_name='orders', on_delete=models.SET_NULL, null=True, blank=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    status_choices = [\n        ('pending', 'Pending'),\n        ('in_progress', 'In Progress'),\n        ('completed', 'Completed'),",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "OrderItem",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class OrderItem(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    order = models.ForeignKey(Order, related_name='order_items', on_delete=models.CASCADE)\n    meal = models.ForeignKey(MealItem, on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField()\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    is_ready = models.BooleanField()\n    def __str__(self):\n        return f'{self.quantity} x {self.meal.name}'\nclass Notification(models.Model):",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Notification",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class Notification(models.Model):\n    message = models.CharField(max_length=255)\n    created_at = models.DateTimeField(default=timezone.now)\n    viewed = models.BooleanField(default=False)\n    def __str__(self):\n        return self.message\nclass BillReport(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    order_id = models.ForeignKey(OrderItem ,on_delete=models.CASCADE,null=True, blank=True)\nclass OrganizationDetail(models.Model):",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "BillReport",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class BillReport(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    order_id = models.ForeignKey(OrderItem ,on_delete=models.CASCADE,null=True, blank=True)\nclass OrganizationDetail(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=400,null=True, blank=True )\n    address = models.CharField(max_length=400,null=True, blank=True )\n    phone =models.CharField(max_length=20,null=True, blank=True )\n    def __str__(self):\n        return self.name",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "OrganizationDetail",
+        "kind": 6,
+        "importPath": "restaurentapp.models",
+        "description": "restaurentapp.models",
+        "peekOfCode": "class OrganizationDetail(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=400,null=True, blank=True )\n    address = models.CharField(max_length=400,null=True, blank=True )\n    phone =models.CharField(max_length=20,null=True, blank=True )\n    def __str__(self):\n        return self.name",
+        "detail": "restaurentapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "MealItemSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class MealItemSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = MealItem\n      fields = \"__all__\"\n      depth = 10\nclass CategorySerializers(serializers.ModelSerializer):\n   mealitem = MealItemSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Category\n      fields = ('id','name','icon','mealitem')",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "CategorySerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class CategorySerializers(serializers.ModelSerializer):\n   mealitem = MealItemSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Category\n      fields = ('id','name','icon','mealitem')\n      depth = 10\nclass TableDataSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = TableData\n      fields = \"__all__\"",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "TableDataSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class TableDataSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = TableData\n      fields = \"__all__\"\n      depth = 10\nclass FloorSerializers(serializers.ModelSerializer):\n   table = TableDataSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Floor\n      fields = ('id','name','table')",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "FloorSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class FloorSerializers(serializers.ModelSerializer):\n   table = TableDataSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Floor\n      fields = ('id','name','table')\n      depth =10\nclass CustomerSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Customer\n      fields = \"__all__\"",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class CustomerSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Customer\n      fields = \"__all__\"\n      depth = 10\nclass OrderItemSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = OrderItem\n      fields = \"__all__\"\n      depth = 10",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "OrderItemSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class OrderItemSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = OrderItem\n      fields = \"__all__\"\n      depth = 10\nclass OrganizationDetailSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = OrganizationDetail\n      fields = \"__all__\"\n      depth = 10",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "OrganizationDetailSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class OrganizationDetailSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = OrganizationDetail\n      fields = \"__all__\"\n      depth = 10\nclass OrderSerializers(serializers.ModelSerializer):\n   order_items = OrderItemSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Order\n      fields = ('id','created_at','updated_at','status','customer','table','order_items')",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "OrderSerializers",
+        "kind": 6,
+        "importPath": "restaurentapp.serializers",
+        "description": "restaurentapp.serializers",
+        "peekOfCode": "class OrderSerializers(serializers.ModelSerializer):\n   order_items = OrderItemSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Order\n      fields = ('id','created_at','updated_at','status','customer','table','order_items')\n      depth = 10",
+        "detail": "restaurentapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "restaurentapp.urls",
+        "description": "restaurentapp.urls",
+        "peekOfCode": "urlpatterns = [\n   # path('', login_view, name='login'),\n   # path('logout', logout_view, name='logout'),\n   # path('register', register_view, name='register'),\n   path('menu/<int:table_id>/<str:customer_name>', login_required(menu_by_view), name='menu_cat'),   \n   path('menu/<int:table_id>/<str:customer_name>/<str:catName>', login_required(menu_by_view), name='menu_cat'),   \n   path('table', login_required(table_view), name='table'),   \n   path('kot', login_required(kot_view), name='kot'),   \n   path('addtable', login_required(add_table_view), name='add_table_view'),   \n   path('addfloor', login_required(add_floor_view), name='add_floor_view'),   ",
+        "detail": "restaurentapp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "GenerateBillView",
+        "kind": 6,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "class GenerateBillView(View):\n    def get(self, request, order_id):\n        try:\n            # Retrieve the order data\n            order = OrderItem.objects.filter(order__id=order_id).first()\n            if not order:\n                return HttpResponse(\"Order not found\", status=404)\n            order_items = OrderItem.objects.filter(order__id=order_id)\n            orders = OrderItemSerializers(order_items, many=True).data\n            # Create the data for the order items table",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "RefreshPageMiddleware",
+        "kind": 6,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "class RefreshPageMiddleware(MiddlewareMixin):\n    def process_response(self, request, response):\n        if response.status_code == 200 and \"/restaurant/\" in request.path:\n            script = \"\"\"\n            <script>\n            function checkForUpdates() {\n                fetch('/check-for-updates')\n                .then(response => response.json())\n                .then(data => {\n                    if (data.updated) {",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_order_after_payment",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def delete_order_after_payment(request, order_id):\n    order = get_object_or_404(OrderItem, order__id = order_id)\n    print(order)\n    print(order.order.table.id)\n    return redirect(\"/restaurent/table\")\n# def delete_order_after_payment(request, order_id):\n#     if request.method == 'POST':\n#         order = OrderItem.objects.filter(order__id = order_id).first()\n#         order_item = OrderItemSerializers(order, many=True).data\n#         print(order_item)",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "generate_pdf",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def generate_pdf(html_content, file_path):\n    buffer = BytesIO()\n    pisa_status = pisa.CreatePDF(html_content, dest=buffer)\n    if pisa_status.err:\n        return None, f'Error generating PDF: {pisa_status.err}'\n    pdf = buffer.getvalue()\n    buffer.close()\n    # with open(file_path, 'wb') as pdf_file:\n    #     pdf_file.write(pdf)\n    #     print(f\"PDF file '{file_path}' has been printed successfully.\")",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "login_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def login_view(request):\n    if request.method == \"POST\":\n        username = request.POST.get('username')\n        password = request.POST.get('password')\n        auth_user = authenticate(request, username=username, password=password)\n        if auth_user is not None:\n            auth_login(request, auth_user)\n            return redirect('/room')\n        else:\n            return JsonResponse({'message': 'Authentication failed'}, status=401)",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "register_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def register_view(request):\n    if request.method=='POST':\n        username=request.POST.get('username')\n        email=request.POST.get('email')\n        password=request.POST.get('password')\n        confirm_password=request.POST.get('confirm_password')\n        if password!=confirm_password:\n            return JsonResponse({\"message\":\"Your password and confrom password are not Same!!\"})\n        else:\n            user=User.objects.create_user(username,email,password)",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return redirect('/') \ndef order_ready(request,order_id):\n    order=get_object_or_404(OrderItem, id = order_id)\n    order.is_ready=True\n    order.save()\n    return redirect('/restaurent/kot')\ndef table_view(request):\n    if request.method == \"POST\":",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "order_ready",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def order_ready(request,order_id):\n    order=get_object_or_404(OrderItem, id = order_id)\n    order.is_ready=True\n    order.save()\n    return redirect('/restaurent/kot')\ndef table_view(request):\n    if request.method == \"POST\":\n        if \"name\" in request.POST:\n            name = request.POST.get(\"name\")\n            phone = request.POST.get(\"phone\")",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "table_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def table_view(request):\n    if request.method == \"POST\":\n        if \"name\" in request.POST:\n            name = request.POST.get(\"name\")\n            phone = request.POST.get(\"phone\")\n            tableId = request.POST.get(\"tableId\")\n            customer = Customer(name=name,phone=phone)\n            customer.save()\n            print(customer.id)\n            return redirect(f\"/restaurent/menu/{tableId}/{name}\")",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "cancel_order",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def cancel_order(request,order_id,table_id,customer_name,catName=\" \"):\n    order =get_object_or_404(OrderItem,id=order_id)\n    order.delete()\n    if catName == \" \":\n        return redirect(f\"/restaurent/menu/{table_id}/{customer_name}/{catName}\")\n    else:\n        return redirect(f\"/restaurent/menu/{table_id}/{customer_name}\")\ndef delete_category(request, cat_id):\n    category =get_object_or_404(Category, id = cat_id)\n    category.delete()",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_category",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def delete_category(request, cat_id):\n    category =get_object_or_404(Category, id = cat_id)\n    category.delete()\n    return redirect('/restaurent/addcategory')\ndef delete_floor(request, floor_id):\n    floor =get_object_or_404(Floor, id = floor_id)\n    floor.delete()\n    return redirect('/restaurent/addfloor')\ndef delete_table(request, table_id):\n    order = get_object_or_404(Order, table__id = table_id)",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_floor",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def delete_floor(request, floor_id):\n    floor =get_object_or_404(Floor, id = floor_id)\n    floor.delete()\n    return redirect('/restaurent/addfloor')\ndef delete_table(request, table_id):\n    order = get_object_or_404(Order, table__id = table_id)\n    order.delete()\n    table =get_object_or_404(TableData, id = table_id)\n    table.delete()\n    return redirect('/restaurent/addtable')",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_table",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def delete_table(request, table_id):\n    order = get_object_or_404(Order, table__id = table_id)\n    order.delete()\n    table =get_object_or_404(TableData, id = table_id)\n    table.delete()\n    return redirect('/restaurent/addtable')\n# def delete_table(request,table_id):\n#     table =get_object_or_404(TableData,id=table_id)\n#     table.delete()\n#     return redirect('/restaurent/addtable')",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_meal",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def delete_meal(request, meal_id):\n    meal =get_object_or_404(MealItem, id = meal_id)\n    meal.delete()\n    return redirect('/restaurent/addmeal')\ndef table_details(request,table_id):\n    table =get_object_or_404(TableData,id=table_id)\n    serializer=TableDataSerializers(table)\n    return JsonResponse(serializer.data,safe=False )\ndef view_table_details(request,table_id):\n    order = Order.objects.filter(table__id=table_id).first()",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "table_details",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def table_details(request,table_id):\n    table =get_object_or_404(TableData,id=table_id)\n    serializer=TableDataSerializers(table)\n    return JsonResponse(serializer.data,safe=False )\ndef view_table_details(request,table_id):\n    order = Order.objects.filter(table__id=table_id).first()\n    # order_items = OrderItem.objects.filter(order__id=order.id)\n    serializer = OrderSerializers(order, many=False)\n    # total_price = sum(float(item['price']) for item in OrderItemSerializers(order_items, many=True).data )\n    return JsonResponse(serializer.data,safe=False )",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "view_table_details",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def view_table_details(request,table_id):\n    order = Order.objects.filter(table__id=table_id).first()\n    # order_items = OrderItem.objects.filter(order__id=order.id)\n    serializer = OrderSerializers(order, many=False)\n    # total_price = sum(float(item['price']) for item in OrderItemSerializers(order_items, many=True).data )\n    return JsonResponse(serializer.data,safe=False )\ndef add_table_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_table_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def add_table_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                   \"SideNav\":SideNav,\n                    \"Data\" : TableDataSerializers(TableData.objects.filter(Q(name__contains=search) ), many=True).data,\n                    \"Floor\":FloorSerializers(Floor.objects.all(), many=True).data,\n                    \"Fields\" : [\"SN\",\"Table Number\"],",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_floor_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def add_floor_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                   \"SideNav\": SideNav,\n                    \"Data\" : FloorSerializers(Floor.objects.filter(Q(name__contains=search) ), many=True).data,\n                    \"Fields\" : [\"SN\",\"Floor Name\"],\n                    \"Page\" :\"Floor\",",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_category_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def add_category_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                   \"SideNav\":SideNav,\n                    \"Data\" : CategorySerializers(Category.objects.filter(Q(name__contains=search) ), many=True).data,\n                    \"Fields\" : [\"SN\",\"Category Name\"],\n                    \"Page\" :\"Category\",",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_meal_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def add_meal_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                   \"SideNav\": SideNav,\n                    \"Data\" : MealItemSerializers(MealItem.objects.filter(Q(name__contains=search) ), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\",\"Category\",\"Price\"],\n                    \"Page\" :\"MealItem\",",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "menu_by_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def menu_by_view(request,table_id,customer_name,catName=None):\n    if request.method == \"POST\":\n        if \"search\" in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                meal_items_query = MealItem.objects.filter(\n                    Q(name__contains=search) | Q(price__contains=search) | Q(category__name__contains=search)\n                )\n                context = {\n                    \"SideNav\": SideNav,",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "kot_view",
+        "kind": 2,
+        "importPath": "restaurentapp.views",
+        "description": "restaurentapp.views",
+        "peekOfCode": "def kot_view(request):\n    order_items = OrderItemSerializers(OrderItem.objects.all(), many=True).data\n    separated_data = defaultdict(list)\n    for entry in order_items:\n        if entry['order']['table']['id']:\n            table_id = entry['order']['table']['id']\n            separated_data[table_id].append(entry)\n    separated_list = [{\"item\": items} for table_id, items in separated_data.items()]\n    context={\n        \"SideNav\":SideNav,",
+        "detail": "restaurentapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0001_initial",
+        "description": "web.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"Complaint\",\n            fields=[\n                (\"id\", models.BigAutoField(primary_key=True, serialize=False)),",
+        "detail": "web.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0002_customer_check_in_customer_check_out_and_more",
+        "description": "web.migrations.0002_customer_check_in_customer_check_out_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"web\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"customer\",\n            name=\"check_in\",\n            field=models.DateField(blank=True, null=True),\n        ),",
+        "detail": "web.migrations.0002_customer_check_in_customer_check_out_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0003_alter_complaint_resolve",
+        "description": "web.migrations.0003_alter_complaint_resolve",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"web\", \"0002_customer_check_in_customer_check_out_and_more\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"complaint\",\n            name=\"resolve\",\n            field=models.BooleanField(blank=True, default=False, null=True),\n        ),",
+        "detail": "web.migrations.0003_alter_complaint_resolve",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0004_customer_is_check_out",
+        "description": "web.migrations.0004_customer_is_check_out",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"web\", \"0003_alter_complaint_resolve\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"customer\",\n            name=\"is_check_out\",\n            field=models.BooleanField(blank=True, default=False, null=True),\n        ),",
+        "detail": "web.migrations.0004_customer_is_check_out",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0005_alter_employee_joining_date",
+        "description": "web.migrations.0005_alter_employee_joining_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"web\", \"0004_customer_is_check_out\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"employee\",\n            name=\"joining_date\",\n            field=models.CharField(blank=True, max_length=300, null=True),\n        ),",
+        "detail": "web.migrations.0005_alter_employee_joining_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0006_room_delete_status",
+        "description": "web.migrations.0006_room_delete_status",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"web\", \"0005_alter_employee_joining_date\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"room\",\n            name=\"delete_status\",\n            field=models.BooleanField(blank=True, default=False, null=True),\n        ),",
+        "detail": "web.migrations.0006_room_delete_status",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "web.migrations.0007_alter_room_delete_status",
+        "description": "web.migrations.0007_alter_room_delete_status",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"web\", \"0006_room_delete_status\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"room\",\n            name=\"delete_status\",\n            field=models.BooleanField(default=1),\n            preserve_default=False,",
+        "detail": "web.migrations.0007_alter_room_delete_status",
+        "documentation": {}
+    },
+    {
+        "label": "PositionAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class PositionAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Profile)\nclass ProfileAdmin(admin.ModelAdmin):\n   list_display = ('user','position')\n   list_display_links = ('user','position')\n@admin.register(RoomType)\nclass RoomTypeAdmin(admin.ModelAdmin):\n   list_display = ('room_type','price','max_people','updated_at', 'created_at')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ProfileAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class ProfileAdmin(admin.ModelAdmin):\n   list_display = ('user','position')\n   list_display_links = ('user','position')\n@admin.register(RoomType)\nclass RoomTypeAdmin(admin.ModelAdmin):\n   list_display = ('room_type','price','max_people','updated_at', 'created_at')\n   search_fields = ('room_type','price','max_people')\n@admin.register(Room)\nclass RoomAdmin(admin.ModelAdmin):\n   list_display = ('room_name','room_type','updated_at', 'created_at')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "RoomTypeAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class RoomTypeAdmin(admin.ModelAdmin):\n   list_display = ('room_type','price','max_people','updated_at', 'created_at')\n   search_fields = ('room_type','price','max_people')\n@admin.register(Room)\nclass RoomAdmin(admin.ModelAdmin):\n   list_display = ('room_name','room_type','updated_at', 'created_at')\n   search_fields = ('room_name','room_type')\n@admin.register(Customer)\nclass CustomerAdmin(admin.ModelAdmin):\n   list_display = ('name', 'address', 'contact', 'email', 'updated_at', 'created_at')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "RoomAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class RoomAdmin(admin.ModelAdmin):\n   list_display = ('room_name','room_type','updated_at', 'created_at')\n   search_fields = ('room_name','room_type')\n@admin.register(Customer)\nclass CustomerAdmin(admin.ModelAdmin):\n   list_display = ('name', 'address', 'contact', 'email', 'updated_at', 'created_at')\n   search_fields=('name', 'address','contact','gender')\n@admin.register(HotelReservation)\nclass HotelReservationAdmin(admin.ModelAdmin):\n   list_display = (  'check_in', 'check_out', 'updated_at', 'created_at')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class CustomerAdmin(admin.ModelAdmin):\n   list_display = ('name', 'address', 'contact', 'email', 'updated_at', 'created_at')\n   search_fields=('name', 'address','contact','gender')\n@admin.register(HotelReservation)\nclass HotelReservationAdmin(admin.ModelAdmin):\n   list_display = (  'check_in', 'check_out', 'updated_at', 'created_at')\n@admin.register(IdCardType)\nclass IdCardTypeAdmin(admin.ModelAdmin):\n   list_display = ('id', 'name')\n   search_fields=('id', 'name')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "HotelReservationAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class HotelReservationAdmin(admin.ModelAdmin):\n   list_display = (  'check_in', 'check_out', 'updated_at', 'created_at')\n@admin.register(IdCardType)\nclass IdCardTypeAdmin(admin.ModelAdmin):\n   list_display = ('id', 'name')\n   search_fields=('id', 'name')\n@admin.register(Designation)\nclass DesignationAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "IdCardTypeAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class IdCardTypeAdmin(admin.ModelAdmin):\n   list_display = ('id', 'name')\n   search_fields=('id', 'name')\n@admin.register(Designation)\nclass DesignationAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Department)\nclass DepartmentAdmin(admin.ModelAdmin):\n   list_display = ('id','name')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "DesignationAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class DesignationAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Department)\nclass DepartmentAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Shift)\nclass ShiftAdmin(admin.ModelAdmin):\n   list_display = ('id','name')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "DepartmentAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class DepartmentAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Shift)\nclass ShiftAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Employee)\nclass EmployeeAdmin(admin.ModelAdmin):\n   list_display = ('name','designation','department','salary','shift','joining_date')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ShiftAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class ShiftAdmin(admin.ModelAdmin):\n   list_display = ('id','name')\n   list_display_links = ('id','name')\n@admin.register(Employee)\nclass EmployeeAdmin(admin.ModelAdmin):\n   list_display = ('name','designation','department','salary','shift','joining_date')\n   search_fields = ('name','designation','department','salary','shift','joining_date')\n@admin.register(Complaint)\nclass ComplaintAdmin(admin.ModelAdmin):\n   list_display = ('complaint_name','complaint_type','resolve','budget')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "EmployeeAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class EmployeeAdmin(admin.ModelAdmin):\n   list_display = ('name','designation','department','salary','shift','joining_date')\n   search_fields = ('name','designation','department','salary','shift','joining_date')\n@admin.register(Complaint)\nclass ComplaintAdmin(admin.ModelAdmin):\n   list_display = ('complaint_name','complaint_type','resolve','budget')\n   search_fields = ('complaint_name','complaint_type','resolve','budget')\n@admin.register(HotelStatus)\nclass HotelStatusAdmin(admin.ModelAdmin):\n   list_display = ('name','total_income','pending_payment','happy_customer')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ComplaintAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class ComplaintAdmin(admin.ModelAdmin):\n   list_display = ('complaint_name','complaint_type','resolve','budget')\n   search_fields = ('complaint_name','complaint_type','resolve','budget')\n@admin.register(HotelStatus)\nclass HotelStatusAdmin(admin.ModelAdmin):\n   list_display = ('name','total_income','pending_payment','happy_customer')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "HotelStatusAdmin",
+        "kind": 6,
+        "importPath": "web.admin",
+        "description": "web.admin",
+        "peekOfCode": "class HotelStatusAdmin(admin.ModelAdmin):\n   list_display = ('name','total_income','pending_payment','happy_customer')",
+        "detail": "web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "WebConfig",
+        "kind": 6,
+        "importPath": "web.apps",
+        "description": "web.apps",
+        "peekOfCode": "class WebConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"web\"",
+        "detail": "web.apps",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMiddleware",
+        "kind": 6,
+        "importPath": "web.middleware",
+        "description": "web.middleware",
+        "peekOfCode": "class LoginRequiredMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    def __call__(self, request):\n        if not request.user.is_authenticated and request.path not in [reverse('login'), reverse('register')]:\n            return redirect(settings.LOGIN_URL)\n        response = self.get_response(request)\n        return response",
+        "detail": "web.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "Position",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Position(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   name = models.CharField(max_length=400)\n   def __str__(self):\n       return self.name\nclass Profile(models.Model):\n    user = models.OneToOneField(User,on_delete=models.CASCADE)\n    position = models.ForeignKey(Position,on_delete=models.CASCADE,related_name='profile')\n    def __str__(self):\n       return self.user",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Profile",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Profile(models.Model):\n    user = models.OneToOneField(User,on_delete=models.CASCADE)\n    position = models.ForeignKey(Position,on_delete=models.CASCADE,related_name='profile')\n    def __str__(self):\n       return self.user\nclass RoomType(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   room_type = models.CharField(max_length=200,unique=True)\n   price = models.IntegerField()\n   max_people = models.IntegerField()",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "RoomType",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class RoomType(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   room_type = models.CharField(max_length=200,unique=True)\n   price = models.IntegerField()\n   max_people = models.IntegerField()\n   updated_at = models.DateField(auto_now_add=True)\n   created_at = models.DateField(auto_now=True)\n   def __str__(self):\n       return self.room_type\nclass Room(models.Model):",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Room",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Room(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   room_name = models.CharField(max_length=200,unique=True)\n   room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE,related_name='room')\n   status = models.BooleanField()\n   check_in_status = models.BooleanField()\n   check_out_status = models.BooleanField()\n   delete_status = models.BooleanField()\n   updated_at = models.DateField(auto_now_add=True)\n   created_at = models.DateField(auto_now=True)",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "IdCardType",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class IdCardType(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=400,unique=True)\n    def __str__(self):\n        return self.name\nclass Customer(models.Model):\n    ID_CARD_TYPE = {\n        ('National Identity Card', 'National Identity Card'),\n        ('Voter Id Card', 'Voter Id Card'),\n        ('Pan Card', 'Pan Card'),",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Customer",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Customer(models.Model):\n    ID_CARD_TYPE = {\n        ('National Identity Card', 'National Identity Card'),\n        ('Voter Id Card', 'Voter Id Card'),\n        ('Pan Card', 'Pan Card'),\n        ('Driving License', 'Driving License'),\n    }\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=400)\n    address = models.CharField(max_length=300)",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "HotelReservation",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class HotelReservation(models.Model):\n   id = models.BigAutoField(primary_key=True)\n   customer = models.ForeignKey(Customer,on_delete=models.CASCADE,null=False , blank=False)\n   receptionist = models.CharField(max_length=200)\n   room = models.ForeignKey(Room,on_delete=models.CASCADE,related_name='reservation')\n   check_in = models.DateField(null=True , blank=True)\n   check_out = models.DateField(null=True , blank=True)\n   total = models.IntegerField(default=0,null=True , blank=True)\n   remaining_price = models.IntegerField(default=0,null=True , blank=True)\n   payment_status = models.BooleanField(default=False,null=True , blank=True)",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Designation",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Designation(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300, unique=True)\n    def __str__(self):\n        return self.name\nclass Department(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300, unique=True)\n    def __str__(self):\n        return self.name",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Department",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Department(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300, unique=True)\n    def __str__(self):\n        return self.name\nclass Shift(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300, unique=True)\n    def __str__(self):\n        return self.name",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Shift",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Shift(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300, unique=True)\n    def __str__(self):\n        return self.name\nclass Employee(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300,unique=True)\n    designation = models.ForeignKey(Designation,on_delete=models.CASCADE)\n    department = models.ForeignKey(Department,on_delete=models.CASCADE)",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Employee",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Employee(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name = models.CharField(max_length=300,unique=True)\n    designation = models.ForeignKey(Designation,on_delete=models.CASCADE)\n    department = models.ForeignKey(Department,on_delete=models.CASCADE)\n    salary = models.IntegerField(default=0)\n    shift = models.ForeignKey(Shift, on_delete=models.CASCADE)\n    joining_date = models.CharField(max_length=300,null=True, blank=True)\n    updated_at = models.DateField(auto_now_add=True)\n    created_at = models.DateField(auto_now=True)",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Complaint",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class Complaint(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    complaint_name = models.CharField(max_length=300)\n    complaint_type = models.CharField(max_length=300)\n    resolve = models.BooleanField(default=False,null=True, blank=True)\n    budget = models.IntegerField(null=True, blank=True)\n    updated_at = models.DateField(auto_now_add=True)\n    created_at = models.DateField(auto_now=True)\n    def __str__(self):\n       return self.complaint_name",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "HotelStatus",
+        "kind": 6,
+        "importPath": "web.models",
+        "description": "web.models",
+        "peekOfCode": "class HotelStatus(models.Model):\n    id = models.BigAutoField(primary_key=True)\n    name =models.CharField(max_length=400,)\n    total_income= models.IntegerField(default=0,null=True,blank=True)\n    pending_payment = models.IntegerField(default=0,null=True,blank=True)\n    happy_customer = models.IntegerField(default = 0,null=True,blank=True)\n    updated_at = models.DateField(auto_now_add=True)\n    created_at = models.DateField(auto_now=True)\n    class Meta:\n        verbose_name_plural = 'Hotel Status'",
+        "detail": "web.models",
+        "documentation": {}
+    },
+    {
+        "label": "HotelReservationSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class HotelReservationSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = HotelReservation\n      fields = '__all__'\n      depth = 5\nclass CustomerSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Customer\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class CustomerSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Customer\n      fields = '__all__'\n      depth = 5\nclass RoomSerializers(serializers.ModelSerializer):\n   reservation = HotelReservationSerializers(many=True, read_only=True).data\n   customer = CustomerSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Room ",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "RoomSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class RoomSerializers(serializers.ModelSerializer):\n   reservation = HotelReservationSerializers(many=True, read_only=True).data\n   customer = CustomerSerializers(many=True, read_only=True).data\n   class Meta:\n      model = Room \n      fields =('id','room_name','room_type','status','check_in_status','check_out_status','updated_at','created_at','reservation','customer')\n      depth = 5\nclass RoomTypeSerializers(serializers.ModelSerializer):\n   room = RoomSerializers(many=True, read_only=True).data\n   class Meta:",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "RoomTypeSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class RoomTypeSerializers(serializers.ModelSerializer):\n   room = RoomSerializers(many=True, read_only=True).data\n   class Meta:\n      model = RoomType\n      fields = ('id','room_type','price','max_people','updated_at','created_at',\"room\")\n      depth = 5\nclass IdCardTypeSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = IdCardType\n      fields = '__all__'",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "IdCardTypeSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class IdCardTypeSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = IdCardType\n      fields = '__all__'\n      depth = 5\nclass EmployeeSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Employee\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "EmployeeSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class EmployeeSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Employee\n      fields = '__all__'\n      depth = 5\nclass ShiftSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Shift\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ShiftSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class ShiftSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Shift\n      fields = '__all__'\n      depth = 5\nclass DepartmentSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Department\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "DepartmentSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class DepartmentSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Department\n      fields = '__all__'\n      depth = 5\nclass DesignationSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Designation\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "DesignationSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class DesignationSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Designation\n      fields = '__all__'\n      depth = 5\nclass ComplaintSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Complaint\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ComplaintSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class ComplaintSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Complaint\n      fields = '__all__'\n      depth = 5\nclass HotelStatusSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = HotelStatus\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "HotelStatusSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class HotelStatusSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = HotelStatus\n      fields = '__all__'\n      depth = 5\nclass ProfileSerializers(serializers.ModelSerializer): \n   class Meta:\n      model = Profile\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ProfileSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class ProfileSerializers(serializers.ModelSerializer): \n   class Meta:\n      model = Profile\n      fields = '__all__'\n      depth = 5\nclass PositionSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Position\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "PositionSerializers",
+        "kind": 6,
+        "importPath": "web.serializer",
+        "description": "web.serializer",
+        "peekOfCode": "class PositionSerializers(serializers.ModelSerializer):\n   class Meta:\n      model = Position\n      fields = '__all__'\n      depth = 5",
+        "detail": "web.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "web.urls",
+        "description": "web.urls",
+        "peekOfCode": "urlpatterns = [\n   path('', login_view, name='login'),\n   path('logout', logout_view, name='logout'),\n   path('register', register_view, name='register'),\n   path('room', login_required(roomScreen), name='room'),\n   path('dashboard', login_required(dashboard_view), name='dashboard'),\n   path('reservation',login_required(addReservation),name='reservation'),\n   path('roomtype', login_required(roomtypeScreen), name='roomtype'),\n   path('customer', login_required(customerScreen), name='customer'),\n   path('staff', login_required(staff_view), name='staff'),",
+        "detail": "web.urls",
+        "documentation": {}
+    },
+    {
+        "label": "staff_required",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def staff_required(login_url=None):\n    return user_passes_test(lambda u: u.is_staff, login_url=login_url)\ndef login_view(request):\n    if request.method == \"POST\":\n        username = request.POST.get('username')\n        password = request.POST.get('password')\n        auth_user = authenticate(request, username=username, password=password)\n        if auth_user is not None:\n            auth_login(request, auth_user)\n            return redirect('/dashboard')",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "login_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def login_view(request):\n    if request.method == \"POST\":\n        username = request.POST.get('username')\n        password = request.POST.get('password')\n        auth_user = authenticate(request, username=username, password=password)\n        if auth_user is not None:\n            auth_login(request, auth_user)\n            return redirect('/dashboard')\n        else:\n            return JsonResponse({'message': 'Authentication failed'}, status=401)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "register_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def register_view(request):\n    if request.method=='POST':\n        username=request.POST.get('username')\n        email=request.POST.get('email')\n        password=request.POST.get('password')\n        confirm_password=request.POST.get('confirm_password')\n        if password!=confirm_password:\n            return JsonResponse({\"message\":\"Your password and confrom password are not Same!!\"})\n        else:\n            user=User.objects.create_user(username,email,password)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return redirect('/')  \nSideBar=[\n    {\"name\" : \"DashBoard \" ,\"link\": \"dashboard\", \"icons\" : 'fa-solid fa-box',\"admin\":False },\n    {\"name\" : \"Manage Room \" ,\"link\": \"room\", \"icons\" : 'fa-solid fa-box',\"admin\": False },\n    {\"name\" : \"Room Type\" ,\"link\": \"roomtype\", \"icons\" : 'fa-solid fa-box' ,\"admin\":False},\n    {\"name\" : \"Guest\" ,\"link\": \"customer\", \"icons\" : 'fa-solid fa-bag-shopping',\"admin\":False },\n    {\"name\" : \"Reservation \" ,\"link\": \"reservation\", \"icons\" : 'fa-solid fa-box',\"admin\":False },\n    {\"name\" : \"Manage Statf \" ,\"link\": \"staff\", \"icons\" : 'fa-solid fa-box',\"admin\":False },",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "reservation_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def reservation_details(request, room_id):\n    if request.method == \"GET\":\n        reservation = get_object_or_404(HotelReservation, room__id=room_id)\n        serializer = HotelReservationSerializers(reservation)\n        return JsonResponse(serializer.data, safe=False)\ndef complaint_details(request, complaint_id):\n    if request.method == \"GET\":\n        complaint = get_object_or_404(Complaint, id=complaint_id)\n        serializer = ComplaintSerializers(complaint)\n        return JsonResponse(serializer.data, safe=False)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "complaint_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def complaint_details(request, complaint_id):\n    if request.method == \"GET\":\n        complaint = get_object_or_404(Complaint, id=complaint_id)\n        serializer = ComplaintSerializers(complaint)\n        return JsonResponse(serializer.data, safe=False)\ndef employee_details(request, employee_id):\n    if request.method == \"GET\":\n        employee = get_object_or_404(Employee, id=employee_id)\n        serializer = EmployeeSerializers(employee)\n        return JsonResponse(serializer.data, safe=False)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "employee_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def employee_details(request, employee_id):\n    if request.method == \"GET\":\n        employee = get_object_or_404(Employee, id=employee_id)\n        serializer = EmployeeSerializers(employee)\n        return JsonResponse(serializer.data, safe=False)\ndef room_details(request, room_id):\n    if request.method == \"GET\":\n        room = get_object_or_404(Room, id=room_id)\n        serializer = RoomSerializers(room)\n        return JsonResponse(serializer.data, safe=False)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "room_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def room_details(request, room_id):\n    if request.method == \"GET\":\n        room = get_object_or_404(Room, id=room_id)\n        serializer = RoomSerializers(room)\n        return JsonResponse(serializer.data, safe=False)\ndef delete_room(request, id):\n    room = get_object_or_404(Room, id=id)\n    room.delete()\n    return redirect('/room')\ndef cancel_reservation(request, id,customer_id):",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_room",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def delete_room(request, id):\n    room = get_object_or_404(Room, id=id)\n    room.delete()\n    return redirect('/room')\ndef cancel_reservation(request, id,customer_id):\n    room = get_object_or_404(Room, id=id)\n    room.status = False\n    room.check_in_status = False\n    room.check_out_status = False\n    room.save()",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "cancel_reservation",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def cancel_reservation(request, id,customer_id):\n    room = get_object_or_404(Room, id=id)\n    room.status = False\n    room.check_in_status = False\n    room.check_out_status = False\n    room.save()\n    customer = get_object_or_404(Customer, id=customer_id)\n    customer.delete()\n    return redirect('/room')\ndef roomtype_details(request, roomtype_id):",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "roomtype_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def roomtype_details(request, roomtype_id):\n    if request.method == \"GET\":\n        roomtype = get_object_or_404(RoomType, id=roomtype_id)\n        serializer = RoomTypeSerializers(roomtype)\n        return JsonResponse(serializer.data, safe=False)\ndef delete_roomtype(request, id):\n    roomtype = get_object_or_404(RoomType, id=id)\n    roomtype.delete()\n    return redirect('/roomtype')\ndef designation_details(request,designation_id):",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_roomtype",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def delete_roomtype(request, id):\n    roomtype = get_object_or_404(RoomType, id=id)\n    roomtype.delete()\n    return redirect('/roomtype')\ndef designation_details(request,designation_id):\n    designation =get_object_or_404(Designation,id=designation_id)\n    serializer=DesignationSerializers(designation)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_designation(request,designation_id):\n    designation =get_object_or_404(Designation,id=designation_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "designation_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def designation_details(request,designation_id):\n    designation =get_object_or_404(Designation,id=designation_id)\n    serializer=DesignationSerializers(designation)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_designation(request,designation_id):\n    designation =get_object_or_404(Designation,id=designation_id)\n    designation.delete()\n    return redirect('/designation')\ndef department_details(request,department_id):\n    department =get_object_or_404(Department,id=department_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_designation",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def delete_designation(request,designation_id):\n    designation =get_object_or_404(Designation,id=designation_id)\n    designation.delete()\n    return redirect('/designation')\ndef department_details(request,department_id):\n    department =get_object_or_404(Department,id=department_id)\n    serializer=DepartmentSerializers(department)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_department(request,department_id):\n    department =get_object_or_404(Department,id=department_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "department_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def department_details(request,department_id):\n    department =get_object_or_404(Department,id=department_id)\n    serializer=DepartmentSerializers(department)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_department(request,department_id):\n    department =get_object_or_404(Department,id=department_id)\n    department.delete()\n    return redirect('/department')\ndef shift_details(request,shift_id):\n    shift =get_object_or_404(Shift,id=shift_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_department",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def delete_department(request,department_id):\n    department =get_object_or_404(Department,id=department_id)\n    department.delete()\n    return redirect('/department')\ndef shift_details(request,shift_id):\n    shift =get_object_or_404(Shift,id=shift_id)\n    serializer=ShiftSerializers(shift)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_shift(request,shift_id):\n    shift =get_object_or_404(Shift,id=shift_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "shift_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def shift_details(request,shift_id):\n    shift =get_object_or_404(Shift,id=shift_id)\n    serializer=ShiftSerializers(shift)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_shift(request,shift_id):\n    shift =get_object_or_404(Shift,id=shift_id)\n    shift.delete()\n    return redirect('/shift')\ndef id_card_type_details(request,id_card_type_id):\n    id_card_type =get_object_or_404(IdCardType,id=id_card_type_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_shift",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def delete_shift(request,shift_id):\n    shift =get_object_or_404(Shift,id=shift_id)\n    shift.delete()\n    return redirect('/shift')\ndef id_card_type_details(request,id_card_type_id):\n    id_card_type =get_object_or_404(IdCardType,id=id_card_type_id)\n    serializer=IdCardTypeSerializers(id_card_type)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_id_card_type(request,id_card_type_id):\n    id_card_type =get_object_or_404(IdCardType,id=id_card_type_id)",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "id_card_type_details",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def id_card_type_details(request,id_card_type_id):\n    id_card_type =get_object_or_404(IdCardType,id=id_card_type_id)\n    serializer=IdCardTypeSerializers(id_card_type)\n    return JsonResponse(serializer.data,safe=False )\ndef delete_id_card_type(request,id_card_type_id):\n    id_card_type =get_object_or_404(IdCardType,id=id_card_type_id)\n    id_card_type.delete()\n    return redirect('/id_card_type')\n@login_required(login_url='/')\ndef roomScreen(request):",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_id_card_type",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def delete_id_card_type(request,id_card_type_id):\n    id_card_type =get_object_or_404(IdCardType,id=id_card_type_id)\n    id_card_type.delete()\n    return redirect('/id_card_type')\n@login_required(login_url='/')\ndef roomScreen(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "roomScreen",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def roomScreen(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : RoomSerializers(Room.objects.filter(Q(room_name__contains=search) | Q(room_type_room_type__contains=search) | Q(price__contains=search)), many=True).data,\n                    \"Fields\" : [\"Room Name\" ,\"Room Type\",\"Booking Status\", \"CheckIn Status\", \"CheckOut Status\", \"Activity\"],\n                    \"Page\" :\"Room\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "roomtypeScreen",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def roomtypeScreen(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : RoomTypeSerializers(RoomType.objects.filter(Q(room_type__contains=search) | Q(description__contains=search)), many=True).data,\n                    \"Fields\" : [\"SN\",\"Room Type\" ,\"price\",'Maximum People'],\n                    \"Page\" :\"Room Type\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "customerScreen",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def customerScreen(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : CustomerSerializers(Customer.objects.filter(Q(name__contains=search) | Q(address__contains=search) | Q(contact__contains=search)| Q(gender__contains=search)), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\" ,\"Address\",\"Contact\",\"Gender\"],\n                    \"Page\" :\"Customer\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "addReservation",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def addReservation(request):\n    if request.method == \"POST\":\n        name = request.POST.get('name')\n        address = request.POST.get('address')\n        contact = request.POST.get('contact')\n        receptionist = request.POST.get('receptionist')\n        email = request.POST.get('email')\n        id_card_type = IdCardType.objects.filter(name = request.POST.get('id_card_type')).first()\n        id_card_no = request.POST.get('id_card_no')\n        room_name = request.POST.get('room_name')",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit_reservation_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def edit_reservation_view(request,room_id, customer_id,reservation_id):\n    room = get_object_or_404(Room, id=room_id)\n    customer = get_object_or_404(Customer, id=customer_id)\n    reservation = get_object_or_404(HotelReservation, id=reservation_id)\n    if request.method == \"POST\":\n        name = request.POST.get('name')\n        address = request.POST.get('address')\n        contact = request.POST.get('contact')\n        receptionist = request.POST.get('receptionist')\n        email = request.POST.get('email')",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def dashboard_view(request):  \n    hotelStatus, created = HotelStatus.objects.get_or_create()\n    total_remaining_payment = HotelReservation.objects.aggregate(Sum('remaining_price'))['remaining_price__sum'] or 0\n    hotelStatus.pending_payment = total_remaining_payment\n    hotelStatus.save()\n    context ={\n        \"SideBar\" : SideBar,\n        \"Data\" : HotelReservationSerializers(HotelReservation.objects.order_by('created_at'), many=True).data,\n        \"Reserved\":RoomSerializers(Room.objects.filter(Q(status=True)), many=True ).data,\n        \"Available\":RoomSerializers(Room.objects.filter(Q(status=False)), many=True ).data,",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "staff_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def staff_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : EmployeeSerializers(Employee.objects.filter(Q(name__contains=search)  ), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\" ,\"Designation\",\"Department\",\"Salary\",\"Shift\",\"Joining Date\",\"Change Shift\"],\n                    \"Page\" :\"Reservation\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "complaint_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def complaint_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : ComplaintSerializers(Complaint.objects.filter(Q(complaint_name__contains=search)  ), many=True).data,\n                    \"Fields\" : [\"SN\",\"complaint name\" ,\"complaint type\",\"complaint incounter\",\"resolve\",\"budget\"],\n                    \"Page\" :\"Complaint\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "designation_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def designation_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : DesignationSerializers(Designation.objects.filter(Q(name__contains=search)), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\"],\n                    \"Page\" :\"Designation\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "department_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def department_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : DepartmentSerializers(Department.objects.filter(Q(name__contains=search)), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\"],\n                    \"Page\" :\"Department\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "id_card_type_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def id_card_type_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : IdCardTypeSerializers(IdCardType.objects.filter(Q(name__contains=search)), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\"],\n                    \"Page\" :\"IdCardType\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "shift_view",
+        "kind": 2,
+        "importPath": "web.views",
+        "description": "web.views",
+        "peekOfCode": "def shift_view(request):\n    if request.method == \"POST\":\n        if 'search' in request.POST:\n            search = request.POST.get(\"search\", \"\")\n            if search:\n                context ={\n                    \"SideBar\" : SideBar,\n                    \"Data\" : ShiftSerializers(Shift.objects.filter(Q(name__contains=search)), many=True).data,\n                    \"Fields\" : [\"SN\",\"Name\"],\n                    \"Page\" :\"Shift\",",
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'restaurent.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

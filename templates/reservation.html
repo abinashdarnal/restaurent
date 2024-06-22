@@ -1,0 +1,258 @@
+{% extends "main.html" %} {% block content %}
+<div class="w-full h-full grid grid-cols-12 overflow-hidden">
+  {% include "sidenav.html" with SideBar=SideBar %}
+  <div class="col-span-10 p-5 flex flex-col gap-3">
+    <div class="h-[5vh] flex justify-between">
+      <form action="" class="">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search"
+          required
+          class="bg-transparent border-2 border-grey-600 rounded-lg py-0.5 px-2"
+        />
+        <button
+          type="submit"
+          class="bg-primary px-2 py-1 text-white rounded-lg"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div>
+        <div
+          id="add"
+          class="bg-primary text-white px-4 py-1 rounded-lg font-bold cursor-pointer"
+        >
+          + Add Reservation
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-between h-full gap-4">
+      <div class="mt-4" id="data">
+        <div class="relative overflow-x-auto shadow-md rounded-md">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead class="text-xs uppercase bg-primary text-white">
+              <tr>
+                {% for field in Fields %}
+                <th scope="col" class="px-4 py-2">{{field}}</th>
+                {% endfor %}
+                <th scope="col" class="px-4 py-2"></th>
+              </tr>
+            </thead>
+
+            <tbody class="data-list text-black">
+              {% for data in Data %}
+              <tr class="border-b border-gray-600">
+                <th class="px-4 py-2">{{forloop.counter }}</th>
+                <th scope="row" class="px-4 py-2">{{data.customer.name}}</th>
+                <td class="px-4 py-2">{{data.room.room_name}}</td>
+                <td class="px-4 py-2">{{data.check_in}}</td>
+                <td class="px-4 py-2">{{data.check_out}}</td>
+                <td class="px-4 py-2 flex gap-2">
+                  <div
+                    class="bg-primary text-white w-7 h-7 rounded-full flex justify-center items-center"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </div>
+                  <div
+                    class="bg-red-500 text-white w-7 h-7 rounded-full flex justify-center items-center"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Data List Table End -->
+      <div class="flex gap-4 justify-center item-center">
+        <button
+          id="prev"
+          onclick="prevPage()"
+          class="bg-primary text-white px-4 py-2 rounded-md"
+        >
+          <i class="fa fa-angle-left"></i>
+
+          Prev
+        </button>
+        <div id="pagination" class="flex gap-2">page</div>
+        <button
+          id="next"
+          onclick="nextPage()"
+          class="bg-primary text-white px-4 py-2 rounded-md"
+        >
+          Next
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    id="add_container"
+    class="fixed top-0 hidden w-full h-full bg-black/50 flex justify-center items-center"
+  >
+    <div class="bg-white rounded-lg overflow-hidden">
+      <div
+        class="w-[700px] bg-primary flex justify-between items-center text-white"
+      >
+        <div class="px-4 py-3 flex items-center gap-3 font-bold">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <h1>Reservation Details</h1>
+        </div>
+      </div>
+      <div class="">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="p-4 grid grid-cols-2 gap-3 text-sm">
+            <div class="flex flex-col gap-3 overflow-hidden overflow-y-auto">
+              <select
+                name="customer"
+                id="customer" required
+                class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer"
+              >
+                <option selected>Select Customer</option>
+                {% for customer in Customer %}
+                <option
+                  value="{{customer.name}}"
+                  class="bg-white text-black hover:bg-primary hover:text-white"
+                >
+                  {{customer.name}}
+                </option>
+                {% endfor %}
+              </select>
+              <select
+                name="room"
+                id="room" required
+                class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer"
+              >
+                <option selected>Select Room</option>
+                {% for room in Room %}
+                <option
+                  value="{{room.room_name}}"
+                  class="bg-white text-black hover:bg-primary hover:text-white"
+                >
+                  {{room.room_name}}
+                </option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="flex gap-3 items-center">
+                <label for="check_in">Check In</label>
+                <input
+                  type="date"
+                  id="check_in" required
+                  placeholder="Check In "
+                  value=""
+                  min="1997-01-01"
+                  max="2030-12-31"
+                  name="check_in"
+                  class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                />
+              </div>
+              <div class="flex gap-3 items-center">
+                <label for="check_out">Check Out</label>
+                <input
+                  type="date" required
+                  name="check_out"
+                  id="check_out"
+                  placeholder="Check Out "
+                  value=""
+                  min="1997-01-01"
+                  max="2030-12-31"
+                  class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                />
+              </div>
+
+              <textarea
+                name="description"
+                placeholder="Description" required
+                class="bg-gray-100 p-2 rounded-lg focus:outline-none w-full h-[200px] hidden"
+              ></textarea>
+              <div
+                class="h-[200px] w-[300px] bg-gray-200 relative flex items-center justify-center rounded-lg cursor-pointer hidden"
+              >
+                <img
+                  id="displayImage"
+                  class="w-full h-full object-cover rounded-lg"
+                  src=""
+                />
+                <div id="addImageText" class="absolute text-gray-500 text-lg">
+                  Add Image
+                </div>
+              </div>
+              <input
+                type="file"
+                id="fileInput"
+                class="hidden"
+                name="id_proof"
+                accept="image/*"
+              />
+            </div>
+          </div>
+          <div class="flex justify-end gap-4 bg-gray-200 p-4">
+            <div
+              onclick="closeAdd()"
+              class="border-2 border-primary rounded-lg px-4 py-1 cursor-pointer"
+            >
+              Cancel
+            </div>
+            <button
+              type="submit"
+              class="bg-primary text-white px-4 py-1 rounded-lg"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block script %}
+<script>
+  const displayImage = document.getElementById("displayImage");
+  const fileInput = document.getElementById("fileInput");
+  const addImageText = document.getElementById("addImageText");
+
+  // Make the img tag clickable to open the file input
+  displayImage.onclick = () => {
+    fileInput.click();
+  };
+  addImageText.onclick = () => {
+    fileInput.click();
+  };
+
+  // Update the img tag with the selected image
+  fileInput.onchange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        displayImage.src = e.target.result;
+        addImageText.classList.add("hidden");
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Show "Add Image" text if no image is selected
+  displayImage.onload = () => {
+    if (!displayImage.src) {
+      addImageText.classList.remove("hidden");
+    }
+  };
+
+  document.getElementById("add").addEventListener("click", function () {
+    document.getElementById("add_container").classList.remove("hidden");
+  });
+  function closeAdd() {
+    document.getElementById("add_container").classList.add("hidden");
+  }
+</script>
+{% endblock script %}

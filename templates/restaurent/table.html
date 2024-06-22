@@ -1,0 +1,248 @@
+{% extends "restaurent/index.html" %} {% block body %}
+<div class="p-4">
+  <div class="flex justify-between items-center mb-3">
+    <div>
+      <h1 class="font-bold text-xl text-outline text-white">
+        Restaurent Management System
+      </h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <a
+        href="/restaurent/addtable"
+        class="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold flex gap-2 items-center"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+        Back to RMS
+      </a>
+      <a
+        href="/dashboard"
+        class="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold flex gap-2 items-center"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+        Back to HMS
+      </a>
+    </div>
+  </div>
+  <div class="flex justify-between items-center">
+    <div class="flex items-center font-bold text-lg">
+      <h1>Table View</h1>
+    </div>
+    <div class="flex items-center gap-4 text-sm font-bold">
+      {% comment %}
+      <div class="bg-primary text-white px-4 py-2 rounded-md">Delivery</div>
+      <div class="bg-primary text-white px-4 py-2 rounded-md">Pick Up</div>
+      {% endcomment %}
+    </div>
+  </div>
+  <div class="flex gap-3 items-center justify-between my-3 text-sm">
+    <div>
+      {% comment %}
+      <div class="bg-primary text-white px-8 py-2 rounded-md font-bold">
+        + Table Reservation
+      </div>
+      {% endcomment %}
+    </div>
+    <div class="flex items-center gap-4 font-semibold">
+      <a
+        href="/restaurent/kot"
+        class="bg-primary text-white px-8 py-2 rounded-md font-bold"
+      >
+        KOT View
+      </a>
+
+      <div class="flex items-center gap-2">
+        <div class="w-3 aspect-square bg-btn1 rounded-full"></div>
+        <h1>Blank Table</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-3 aspect-square bg-yellow-300 rounded-full"></div>
+        <h1>Running Table</h1>
+      </div>
+      {% comment %}
+      <div class="flex items-center gap-2">
+        <div class="w-3 aspect-square bg-red-400 rounded-full"></div>
+        <h1>Table Reserved</h1>
+      </div>
+      {% endcomment %}
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    {% for data in Data %}
+    <div class="flex flex-col gap-3 text-sm">
+      <div class="text-primary font-bold">
+        <h1>{{data.name}}</h1>
+      </div>
+      <div class="flex flex-wrap gap-3 px-4">
+        {% for data in data.table %}
+        <!---->
+        {% if data.occupied %}
+        <a
+          table-data="{{data.id}}"
+          class="w-[90px] aspect-square bg-yellow-300 rounded-xl flex justify-center items-center relative  cursor-pointer data-table"
+        >
+          <div
+            class="flex flex-col gap-1 justify-center items-center font-bold"
+          >
+            <h1 class="text-lg">{{data.name}}</h1>
+          </div>
+          {% comment %} {% if OrderItem. %}{% endif %} {% endcomment %}
+          <div
+            class="absolute -bottom-[15px] w-[30px] aspect-square bg-gray-100 flex justify-center items-center rounded-md"
+          >
+            <i class="fa-regular fa-eye"></i>
+          </div>
+        </a>
+        {% else %}
+        <!---->
+        <a
+          onclick="openPopup('{{ data.id }}')"
+          class="w-[90px] aspect-square bg-btn1 rounded-xl flex justify-center items-center cursor-pointer"
+        >
+          <h1 class="font-bold text-lg">{{data.name}}</h1>
+        </a>
+        {% endif %}
+        <!---->
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <div
+      id="popup"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+        <span
+          class="absolute top-2 right-2 text-gray-500 cursor-pointer"
+          onclick="closePopup()"
+          >&times;</span
+        >
+        <form method="POST" class="space-y-4">
+          {% csrf_token %}
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Name:</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700"
+              >Phone:</label
+            >
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+            />
+          </div>
+          <input type="hidden" id="tableId" name="tableId" />
+          <button
+            type="submit"
+            class="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    {% comment %}
+    <div class="flex flex-col gap-3 text-sm">
+      <div class="text-primary font-bold">
+        <h1>1st Floor</h1>
+      </div>
+      <div class="flex flex-wrap gap-3 px-4">
+        <div
+          class="w-[90px] aspect-square bg-red-400 rounded-xl flex justify-center items-center relative"
+        >
+          <div
+            class="flex flex-col gap-1 justify-center items-center font-bold"
+          >
+            <h1 class="text-lg">11</h1>
+            <h1>Reserved</h1>
+          </div>
+        </div>
+        {% for number in numbers|slice:"11:15" %}
+        <div
+          class="w-[90px] aspect-square bg-btn1 rounded-xl flex justify-center items-center"
+        >
+          <h1 class="font-bold text-lg">{{ number }}</h1>
+        </div>
+        {% endfor %}
+        <div
+          class="w-[90px] aspect-square bg-yellow-300 rounded-xl flex justify-center items-center relative"
+        >
+          <div
+            class="flex flex-col gap-1 justify-center items-center font-bold"
+          >
+            <h1 class="text-lg">16</h1>
+            <h1>Rs 3000</h1>
+          </div>
+          <div
+            class="absolute -bottom-[15px] w-[30px] aspect-square bg-gray-100 flex justify-center items-center rounded-md"
+          >
+            <i class="fa-regular fa-eye"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 text-sm">
+      <div class="text-primary font-bold">
+        <h1>2nd Floor</h1>
+      </div>
+      <div class="flex flex-wrap gap-3 px-4">
+        {% for number in numbers|slice:"16:19" %}
+        <div
+          class="w-[90px] aspect-square bg-btn1 rounded-xl flex justify-center items-center"
+        >
+          <h1 class="font-bold text-lg">{{ number }}</h1>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endcomment %}
+  </div>
+</div>
+{% endblock body %}
+<!---->
+{% block script %}
+<script>
+  function openPopup(tableId) {
+    document.getElementById("tableId").value = tableId;
+    document.getElementById("popup").classList.remove("hidden");
+  }
+
+  function closePopup() {
+    document.getElementById("popup").classList.add("hidden");
+  }
+
+  //edit table
+  document.addEventListener("DOMContentLoaded", function () {
+    const editTable = document.querySelectorAll(".data-table");
+    editTable.forEach((button) => {
+      button.addEventListener("click", function () {
+        const tableId = this.getAttribute("table-data");
+        console.log(tableId);
+        fetch(`/restaurent/viewtable/${tableId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            "";
+            console.log(data);
+
+            ////redirect to some link
+            window.location.href = `/restaurent/menu/${data.table.id}/${data.customer.name}`;
+          })
+          .catch((error) =>
+            console.error("Error fetching table details:", error)
+          );
+      });
+    });
+  });
+</script>
+{% endblock script %}

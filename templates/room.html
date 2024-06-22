@@ -1,0 +1,359 @@
+{% extends "main.html" %} {% block content %}
+<div class="w-full h-full grid grid-cols-12 overflow-hidden">
+  {% include "sidenav.html" %}
+  <div class="col-span-10 p-5 flex flex-col gap-3 overflow-hidden">
+    <div class="h-[5vh] flex justify-between">
+      <form action="" class="">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search"
+          class="bg-transparent border-2 border-grey-600 rounded-lg py-0.5 px-2"
+        />
+        <button
+          type="submit"
+          class="bg-primary px-2 py-1 text-white rounded-lg"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div>
+        {% if user.is_staff %}
+        <div
+          id="add"
+          class="bg-primary text-white px-4 py-1 rounded-lg font-bold cursor-pointer"
+        >
+          + Add Room
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="flex flex-col justify-between h-full gap-4">
+      <div class="mt-4" id="data">
+        <div class="relative overflow-x-auto shadow-md rounded-md">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead class="text-xs uppercase bg-primary text-white">
+              <tr>
+                {% for field in Fields %}
+                <th scope="col" class="px-4 py-2">{{field}}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+
+            <tbody class="data-list text-black">
+              {% for data in Data %}
+              <tr class="border-b border-gray-600">
+                <th scope="row" class="px-4 py-2 font-medium">
+                  {{data.room_name}}
+                </th>
+                <td class="px-4 py-2">{{data.room_type.room_type}}</td>
+                <td class="px-4 py-2">
+                  {% if data.status %}
+                  <div class="flex">
+                    <div class="bg-red-500 text-white rounded-lg px-4 py-2">
+                      Booked
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="flex">
+                    <a
+                      href="/reservation?room_id={{ data.id }}&&room_type={{ data.room_type.room_type }}&&room_name={{ data.room_name }}"
+                      class="bg-green-500 text-white rounded-lg px-4 py-2"
+                    >
+                      Available
+                    </a>
+                  </div>
+                  {% endif %}
+                </td>
+                <td class="px-4 py-2">
+                  {% if data.status %} {% if data.check_in_status %}
+                  <div class="flex">
+                    <div
+                      class="bg-red-500 text-white rounded-lg px-4 py-2 cursor-pointer"
+                    >
+                      Checked In
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="flex">
+                    <div
+                      data-id="{{data.id}}"
+                      class="bg-yellow-500 text-white rounded-lg px-4 py-2 cursor-pointer check-in-btn"
+                    >
+                      Check In
+                    </div>
+                  </div>
+                  {% endif %} {% endif %}
+                </td>
+                <td class="px-4 py-2">
+                  {% if data.check_in_status %}
+                  <div class="flex">
+                    <div
+                      Check-out="{{data.id}}"
+                      class="bg-blue-500 text-white rounded-lg px-4 py-2 cursor-pointer check-out-btn"
+                    >
+                      Checked Out
+                    </div>
+                  </div>
+                  {% endif %}
+                </td>
+
+                <td class="px-4 py-2 flex gap-2">
+                  <div
+                    edit-reservation="{{data.id}}"
+                    class="bg-blue-500 text-white w-7 h-7 rounded-full flex justify-center items-center cursor-pointer reservation-edit"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </div>
+                  {% if data.status %}
+                  <div
+                    room-view="{{data.id}}"
+                    class="bg-yellow-500 text-white w-7 h-7 rounded-full flex justify-center items-center cursor-pointer view-room"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </div>
+                  {% endif %}
+
+                  <div
+                    reservation-cancel="{{data.id}}"
+                    class="bg-red-500 text-white w-7 h-7 rounded-full flex justify-center items-center cursor-pointer cancel-reservation"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                  {% if user.is_staff %}
+                  <div
+                    room-delete="{{data.id}}"
+                    class="bg-red-500 text-white w-7 h-7 rounded-full flex justify-center items-center cursor-pointer delete-room"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+
+                  <div
+                    room-edit="{{data.id}}"
+                    class="bg-primary text-white w-7 h-7 rounded-full flex justify-center items-center cursor-pointer edit-room"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </div>
+
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Data List Table End -->
+      <div class="flex gap-4 justify-center item-center">
+        <button
+          id="prev"
+          onclick="prevPage()"
+          class="bg-primary text-white px-4 py-2 rounded-md"
+        >
+          <i class="fa fa-angle-left"></i>
+
+          Prev
+        </button>
+        <div id="pagination" class="flex gap-2">page</div>
+        <button
+          id="next"
+          onclick="nextPage()"
+          class="bg-primary text-white px-4 py-2 rounded-md"
+        >
+          Next
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    id="add_container"
+    class="fixed top-0 z-[10] hidden w-full h-full bg-black/50 flex justify-center items-center"
+  >
+    <div class="bg-white rounded-lg overflow-hidden">
+      <div
+        class="w-[700px] bg-primary flex justify-between items-center text-white"
+      >
+        <div class="px-4 py-3 flex items-center gap-3 font-bold">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <h1>Room Details</h1>
+        </div>
+      </div>
+      <div class="">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="p-4 grid grid-cols-2 gap-3 text-sm">
+            <div class="flex flex-col gap-3 overflow-hidden overflow-y-auto">
+              <input
+                type="text"
+                name="room_name"
+                required
+                class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                placeholder="Room Name"
+              />
+            </div>
+            <div class="flex">
+              <select
+                name="room_type"
+                required
+                id="room_type"
+                class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer w-full"
+              >
+                <option selected>Select Room Type</option>
+                {% for roomtype in RoomType %}
+                <option
+                  value="{{roomtype.room_type}}"
+                  class="bg-white text-black hover:bg-primary hover:text-white"
+                >
+                  {{roomtype.room_type}}
+                </option>
+                {% endfor %}
+              </select>
+              <div
+                class="h-[200px] w-[300px] bg-gray-200 relative flex items-center justify-center rounded-lg cursor-pointer hidden"
+              >
+                <img
+                  id="displayImage"
+                  class="w-full h-full object-cover rounded-lg"
+                  src=""
+                />
+                <div id="addImageText" class="absolute text-gray-500 text-lg">
+                  Add Image
+                </div>
+              </div>
+              <input
+                type="file"
+                id="fileInput"
+                class="hidden"
+                accept="image/*"
+              />
+            </div>
+          </div>
+          <div class="flex justify-end gap-4 bg-gray-200 p-4">
+            <div
+              onclick="closeAdd()"
+              class="border-2 border-primary rounded-lg px-4 py-1 cursor-pointer"
+            >
+              Cancel
+            </div>
+            <button
+              type="submit"
+              class="bg-primary text-white px-4 py-1 rounded-lg"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fixed top-0 z-[10] hidden w-full h-full bg-black/50 flex justify-center items-center text-sm"
+  >
+    <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+      <div class="flex justify-center p-3 bg-gray-300">
+        <h1>Guest Check In</h1>
+      </div>
+      <form method="POST">
+        <div class="py-3">
+          <ul>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Customer</h1>
+              <h1>{{Reservation.customer.name}}</h1>
+            </li>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Room</h1>
+              <h1>{{Reservation.room.room_name}}</h1>
+            </li>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Room Type</h1>
+              <h1>{{Reservation.room.room_type.room_type}}</h1>
+            </li>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Checkedin Date</h1>
+              <h1>{{Reservation.check_in}}</h1>
+            </li>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Check OUt Date</h1>
+              <h1>{{Reservation.check_out}}</h1>
+            </li>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Total</h1>
+              <h1>{{Reservation.total}}</h1>
+            </li>
+            <li
+              class="flex justify-between border-b-[1px] border-black/60 px-4 py-1"
+            >
+              <h1>Payment Status</h1>
+              <h1>{{Reservation.payment_status}}</h1>
+            </li>
+          </ul>
+        </div>
+        <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+          <div
+            onclick="choseCheckIn()"
+            class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg"
+          >
+            Cancel
+          </div>
+          <button
+            type="Submit"
+            class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% endblock content %} {% block script %}
+  <script>
+    const displayImage = document.getElementById("displayImage");
+    const fileInput = document.getElementById("fileInput");
+    const addImageText = document.getElementById("addImageText");
+
+    // Make the img tag clickable to open the file input
+    displayImage.onclick = () => {
+      fileInput.click();
+    };
+    addImageText.onclick = () => {
+      fileInput.click();
+    };
+
+    // Update the img tag with the selected image
+    fileInput.onchange = (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          displayImage.src = e.target.result;
+          addImageText.classList.add("hidden");
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    // Show "Add Image" text if no image is selected
+    displayImage.onload = () => {
+      if (!displayImage.src) {
+        addImageText.classList.remove("hidden");
+      }
+    };
+  </script>
+  {% endblock script %}
+</div>

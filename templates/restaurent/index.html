@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Management System</title>
+    <!-- css  -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/fontawesome.min.css" />
+
+    <!-- js  -->
+    <script src="/static/js/tailwind.min.js"></script>
+    <script src="/static/js/fontawesome.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6403e2",
+              secondary: " ",
+              btn1: "#cdabfab6",
+            },
+          },
+        },
+        plugins: [
+          function ({ addUtilities }) {
+            const newUtilities = {
+              ".text-outline": {
+                textShadow: `
+            -1px -1px 0 #6403e2,
+            2px -1px 0 #6403e2,
+            -1px 1px 0 #6403e2,
+            2px 2px 0 #6403e2
+          `,
+              },
+            };
+
+            addUtilities(newUtilities, ["responsive", "hover"]);
+          },
+        ],
+      };
+    </script>
+  </head>
+  <body>
+    {% block body %}{% endblock body %}
+    <!---->
+    {% block script %}{% endblock script %}
+    <script src="/static/js/index2.js"></script>
+    <script>
+      function editCategory(id) {
+        console.log(id);
+        document.getElementById("popupCategory").classList.remove("hidden");
+      }
+
+      function closeEditCategory() {
+        document.getElementById("popupCategory").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>

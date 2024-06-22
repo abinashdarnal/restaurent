@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Management System</title>
+    <!-- css  -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/fontawesome.min.css" />
+
+    <!-- js  -->
+    <script src="/static/js/tailwind.min.js"></script>
+    <script src="/static/js/fontawesome.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6403e2",
+              secondary: " ",
+              btn1: "#cdabfab6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    {% block content %}{% endblock content %}
+    <script src="/static/js/index.js"></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const checkinInput = document.getElementById('check_in');
+        const checkoutInput = document.getElementById('check_out');
+        const totalDaysSpan = document.getElementById('total_days');
+        const roomPriceSpan = document.getElementById('room_price');
+        const totalCostInput = document.getElementById('total_cost');
+        const roomPrices = {
+          {% for roomtype in RoomType %}
+            '{{ roomtype.room_type }}': {{ roomtype.price }},
+          {% endfor %}
+        };
+        function calculateDayDifference() {
+          const checkinDate = new Date(checkinInput.value);
+          const checkoutDate = new Date(checkoutInput.value);
+          // Validate check-out date
+          if (checkoutDate <= checkinDate) {
+            checkoutInput.value = '';
+            totalDaysSpan.textContent = 0;
+            roomPriceSpan.textContent = 0;
+            totalCostInput.value = 0;
+            return;
+          }
+          const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
+          const dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+          const selectedRoomType = document.getElementById('room_type').value;
+          const roomPrice = roomPrices[selectedRoomType] || 0;
+          const totalCost = roomPrice * dayDiff;
+          totalDaysSpan.textContent = dayDiff;
+          roomPriceSpan.textContent = roomPrice;
+          totalCostInput.value = totalCost ;
+        }
+        checkinInput.addEventListener('change', calculateDayDifference);
+        checkoutInput.addEventListener('change', calculateDayDifference);
+        document.getElementById('room_type').addEventListener('change', calculateDayDifference);
+      });
+
+      // check in
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkInButtons = document.querySelectorAll('.check-in-btn');
+
+
+        checkInButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('data-id');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/reservation/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+                console.log(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Guest Check In</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer</h1>
+                                  <h1>${data.customer.name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer contact</h1>
+                                  <h1>${data.customer.contact}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room</h1>
+                                  <h1>${data.room.room_name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room Type</h1>
+                                   <h1>${data.room.room_type.room_type}</h1
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Checked-in Date</h1>
+                                  <h1>${data.check_in}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Check-Out Date</h1>
+                                  <h1>${data.check_out}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Total</h1>
+                                  <h1>${data.total}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Payment Status</h1>
+                                  <h1>${data.payment_status ? 'Paid' : 'Unpaid'}</h1>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="reservation_id" value="${data.id}">
+                        <input type="hidden" name="room_id" value="${data.room.id}">
+
+                        <input
+                          type="tel"
+                          name="advance_payment"
+                          placeholder="Advance Payment"
+                          class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                        />
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-popup"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      // checked out
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkInButtons = document.querySelectorAll('.check-out-btn');
+        checkInButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('Check-out');
+              fetch(`/reservation/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Guest Check Out</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer</h1>
+                                  <h1>${data.customer.name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer contact</h1>
+                                  <h1>${data.customer.contact}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room Type</h1>
+                                  <h1>${data.room.room_type.room_type}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Checked-in Date</h1>
+                                  <h1>${data.check_in}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Check-Out Date</h1>
+                                  <h1>${data.check_out}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Total</h1>
+                                  <h1>${data.total}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Remaning Amount</h1>
+                                  <h1>${data.remaining_price}</h1>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="reservation_id" value="${data.id}">
+                        <input type="hidden" name="room_id" value="${data.room.id}">
+                        <input type="hidden" name="customer_id" value="${data.customer.id}">
+
+                        <input
+                          type="tel"
+                          name="remaining_payment"
+                          placeholder="Remaning Payment"
+                          class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                        />
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer "
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      // view room
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkInButtons = document.querySelectorAll('.view-room');
+        checkInButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('room-view');
+              fetch(`/reservation/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>${data.room.room_name}</h1>
+                  </div>
+
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer</h1>
+                                  <h1>${data.customer.name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer contact</h1>
+                                  <h1>${data.customer.contact}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room Type</h1>
+                                  <h1>${data.room.room_type.room_type}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Checked-in Date</h1>
+                                  <h1>${data.check_in}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Check-Out Date</h1>
+                                  <h1>${data.check_out}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Total</h1>
+                                  <h1>${data.total}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Remaning Amount</h1>
+                                  <h1>${data.remaining_price}</h1>
+                              </li>
+                          </ul>
+                      </div>
+
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          OK
+                        </div>
+
+                      </div>
+
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      // cancel reservation
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkInButtons = document.querySelectorAll('.cancel-reservation');
+        checkInButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('reservation-cancel');
+              fetch(`/reservation/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Guest Check Out</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer</h1>
+                                  <h1>${data.customer.name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer contact</h1>
+                                  <h1>${data.customer.contact}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room Type</h1>
+                                  <h1>${data.room.room_type.room_type}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Checked-in Date</h1>
+                                  <h1>${data.check_in}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Check-Out Date</h1>
+                                  <h1>${data.check_out}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Total</h1>
+                                  <h1>${data.total}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Remaning Amount</h1>
+                                  <h1>${data.remaining_price}</h1>
+                              </li>
+                          </ul>
+                      </div>
+
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <a
+                         href="cancel_reservation/${data.room.id}/${data.customer.id}"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer "
+                        >
+                          Submit
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      // edit reservation
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkInButtons = document.querySelectorAll('.reservation-edit');
+        checkInButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('edit-reservation');
+              fetch(`/reservation/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Guest Check Out</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer</h1>
+                                  <h1>${data.customer.name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer contact</h1>
+                                  <h1>${data.customer.contact}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room Type</h1>
+                                  <h1>${data.room.room_type.room_type}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Checked-in Date</h1>
+                                  <h1>${data.check_in}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Check-Out Date</h1>
+                                  <h1>${data.check_out}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Total</h1>
+                                  <h1>${data.total}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Remaning Amount</h1>
+                                  <h1>${data.remaining_price}</h1>
+                              </li>
+                          </ul>
+                      </div>
+
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                         href="change_reservation/${data.room.id}/${data.customer.id}/${data.id}/"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer "
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      // checked out from room
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkInButtons = document.querySelectorAll('.check-out-room-btn');
+        checkInButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('Check-out-room');
+              fetch(`/reservation/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Guest Check Out</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Customer</h1>
+                                  <h1>${data.customer.name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room</h1>
+                                  <h1>${data.room.room_name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Room Type</h1>
+                                  <h1>${data.room.room_type.room_type}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Checked-in Date</h1>
+                                  <h1>${data.check_in}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Check-Out Date</h1>
+                                  <h1>${data.check_out}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Total</h1>
+                                  <h1>${data.total}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Remaning Amount</h1>
+                                  <h1>${data.remaining_price}</h1>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="reservation_id" value="${data.id}">
+                        <input type="hidden" name="room_id" value="${data.room.id}">
+                        <input type="hidden" name="customer_id" value="${data.customer.id}">
+
+                        <input
+                          type="tel"
+                          name="remaining_payment"
+                          placeholder="Remaning Payment"
+                          class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                        />
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer "
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      //complaint resolve
+      document.addEventListener('DOMContentLoaded', function () {
+        const resolveComplaint = document.querySelectorAll('.resolve-complaint');
+
+        resolveComplaint.forEach(button => {
+          button.addEventListener('click', function () {
+            const complaintId = this.getAttribute('complaint-resolve');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/complaint/${complaintId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[500px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Complaint Resolve</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Complaint Name</h1>
+                                  <h1>${data.complaint_name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Complaint Type</h1>
+                                  <h1>${data.complaint_type}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Resolve Status</h1>
+                                  <h1>${data.resolve ? 'Paid' : 'Unpaid'}</h1>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="complaint_id" value="${data.id}">
+
+
+                        <input
+                          type="number"
+                          name="budget"
+                          placeholder="Budget"
+                          class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                        />
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+
+      //change shift
+      document.addEventListener('DOMContentLoaded', function () {
+        const resolveComplaint = document.querySelectorAll('.shift-changed');
+
+        resolveComplaint.forEach(button => {
+          button.addEventListener('click', function () {
+            const employeeId = this.getAttribute('change-shift');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/staff/${employeeId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Change Shift of ${data.name}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="employee_id" value="${data.id}">
+
+                        <select
+                        name="changed_shift"
+                        id="changed_shift"
+                        class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer w-full"
+                      >
+                        <option selected>Change Shift</option>
+                        {% for shift in Shift %}
+                        <option
+                          value="{{shift.name}}"
+                          class="bg-white text-black hover:bg-primary hover:text-white"
+                        >
+                          {{shift.name}}
+                        </option>
+                        {% endfor %}
+                      </select>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+        //edit room
+      document.addEventListener('DOMContentLoaded', function () {
+        const resolveComplaint = document.querySelectorAll('.edit-room');
+
+        resolveComplaint.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('room-edit');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/room/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Edit Room ${data.room_name}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="room_id" value="${data.id}">
+
+                        <div class="grid grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            name="update_room_name"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.room_name}"
+                          />
+
+                          <select
+                            name="update_room_type"
+                            id="update_room_type"
+                            class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer w-full"
+                          >
+                            <option selected>Update Room Type</option>
+                            {% for roomtype in RoomType %}
+                            <option
+                              value="{{roomtype.room_type}}"
+                              class="bg-white text-black hover:bg-primary hover:text-white"
+                            >
+                              {{roomtype.room_type}}
+                            </option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+
+      //delete room
+      document.addEventListener('DOMContentLoaded', function () {
+        const deleteRoom = document.querySelectorAll('.delete-room');
+
+        deleteRoom.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('room-delete');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/room/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Do you really want to delete ${data.room_name} ?</h1>
+                  </div>
+                  <form  method="POST" >
+                    {% csrf_token %}
+                       <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Complaint Name</h1>
+                                  <h1>${data.room_name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Complaint Type</h1>
+                                  <h1>${data.room_type.room_type}</h1>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="room_id" value="${data.id}">
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-room-edit cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                        href="/delete_room/${data.id}"
+
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-room-edit').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+        //edit roomtype
+      document.addEventListener('DOMContentLoaded', function () {
+        const resolveComplaint = document.querySelectorAll('.edit-roomtype');
+
+        resolveComplaint.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomtypeId = this.getAttribute('roomtype-edit');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/roomtype/${roomtypeId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Edit Room ${data.room_type}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="roomtype_id" value="${data.id}">
+
+                        <div class="grid grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            name="update_room_type"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.room_type}"
+                          />
+                          <input
+                            type="text"
+                            name="update_price"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.price}"
+                          />
+                          <input
+                            type="text"
+                            name="update_max_people"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.max_people}"
+                          />
+
+
+                        </div>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      //delete room
+      document.addEventListener('DOMContentLoaded', function () {
+        const resolveComplaint = document.querySelectorAll('.delete-room');
+
+        resolveComplaint.forEach(button => {
+          button.addEventListener('click', function () {
+            const roomId = this.getAttribute('room-delete');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/room/${roomId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Do you really want to delete ${data.room_name} ?</h1>
+                  </div>
+                  <form  method="POST" >
+                    {% csrf_token %}
+                       <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Complaint Name</h1>
+                                  <h1>${data.room_name}</h1>
+                              </li>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Complaint Type</h1>
+                                  <h1>${data.room_type.room_type}</h1>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="room_id" value="${data.id}">
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-room-edit cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                        href="/delete_room/${data.id}"
+
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-room-edit').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+       //edit designation
+       document.addEventListener('DOMContentLoaded', function () {
+        const edit = document.querySelectorAll('.edit-designation');
+
+        edit.forEach(button => {
+          button.addEventListener('click', function () {
+            const designationId = this.getAttribute('designation-edit');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/designation/${designationId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Edit Designation ${data.name}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="designation_id" value="${data.id}">
+
+                        <div class="grid grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            name="update_name"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.name}"
+                          />
+
+
+                        </div>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      //delete desingation
+      document.addEventListener('DOMContentLoaded', function () {
+        const deleteContent = document.querySelectorAll('.delete-designation');
+
+        deleteContent.forEach(button => {
+          button.addEventListener('click', function () {
+            const designationId = this.getAttribute('designation-delete');
+
+            fetch(`/designation/${designationId}`)
+            .then(response => response.json())
+            .then(data => {
+              console.log(data);
+              showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Do you really want to delete ${data.name} ?</h1>
+                  </div>
+                  <form  method="POST" >
+                    {% csrf_token %}
+                       <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Designation Name</h1>
+                                  <h1>${data.name}</h1>
+                              </li>
+
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="designation_id" value="${data.id}">
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-room-edit cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                        href="/delete_designation/${data.id}"
+
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-room-edit').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+       //edit department
+       document.addEventListener('DOMContentLoaded', function () {
+        const edit = document.querySelectorAll('.edit-department');
+
+        edit.forEach(button => {
+          button.addEventListener('click', function () {
+            const departmentId = this.getAttribute('department-edit');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/department/${departmentId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Edit Department ${data.name}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="department_id" value="${data.id}">
+
+                        <div class="grid grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            name="update_name"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.name}"
+                          />
+
+
+                        </div>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      //delete department
+      document.addEventListener('DOMContentLoaded', function () {
+        const deleteContent = document.querySelectorAll('.delete-department');
+
+        deleteContent.forEach(button => {
+          button.addEventListener('click', function () {
+            const departmentId = this.getAttribute('department-delete');
+
+            fetch(`/department/${departmentId}`)
+            .then(response => response.json())
+            .then(data => {
+              console.log(data);
+              showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Do you really want to delete ${data.name} ?</h1>
+                  </div>
+                  <form  method="POST" >
+                    {% csrf_token %}
+                       <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Department Name</h1>
+                                  <h1>${data.name}</h1>
+                              </li>
+
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="department_id" value="${data.id}">
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-room-edit cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                        href="/delete_department/${data.id}"
+
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-room-edit').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+       //edit idcard
+       document.addEventListener('DOMContentLoaded', function () {
+        const edit = document.querySelectorAll('.edit-idcard');
+
+        edit.forEach(button => {
+          button.addEventListener('click', function () {
+            const idcardId = this.getAttribute('idcard-edit');
+            // Fetch reservation details dynamically using AJAX or Fetch API
+              fetch(`/id_card_type/${idcardId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Edit Department ${data.name}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="idcard_id" value="${data.id}">
+
+                        <div class="grid grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            name="update_name"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.name}"
+                          />
+
+
+                        </div>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      //delete idcard
+      document.addEventListener('DOMContentLoaded', function () {
+        const deleteContent = document.querySelectorAll('.delete-idcard');
+
+        deleteContent.forEach(button => {
+          button.addEventListener('click', function () {
+            const idcardId = this.getAttribute('idcard-delete');
+
+            fetch(`/id_card_type/${idcardId}`)
+            .then(response => response.json())
+            .then(data => {
+              console.log(data);
+              showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Do you really want to delete ${data.name} ?</h1>
+                  </div>
+                  <form  method="POST" >
+                    {% csrf_token %}
+                       <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Id Card Type Name</h1>
+                                  <h1>${data.name}</h1>
+                              </li>
+
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="idcard_id" value="${data.id}">
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-room-edit cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                        href="/delete_id_card_type/${data.id}"
+
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-room-edit').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+       //edit shift
+       document.addEventListener('DOMContentLoaded', function () {
+        const edit = document.querySelectorAll('.edit-shift');
+
+        edit.forEach(button => {
+          button.addEventListener('click', function () {
+            const shiftId = this.getAttribute('shift-edit');
+              fetch(`/shift/${shiftId}`)
+              .then(response => response.json())
+              .then(data => {
+                showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Edit Shift ${data.name}</h1>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="shift_id" value="${data.id}">
+
+                        <div class="grid grid-cols-2 gap-2">
+                          <input
+                            type="text"
+                            name="update_name"
+                            class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+                            placeholder="${data.name}"
+                          />
+
+
+                        </div>
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-out-popup cursor-pointer"
+                        >
+                          Cancel
+                        </div>
+                        <button
+                          type="Submit"
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-out-popup').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+      //delete shift
+      document.addEventListener('DOMContentLoaded', function () {
+        const deleteContent = document.querySelectorAll('.delete-shift');
+
+        deleteContent.forEach(button => {
+          button.addEventListener('click', function () {
+            const shiftId = this.getAttribute('shift-delete');
+
+            fetch(`/shift/${shiftId}`)
+            .then(response => response.json())
+            .then(data => {
+              console.log(data);
+              showPopup(data);
+
+              })
+              .catch(error => console.error('Error fetching reservation details:', error));
+            });
+          });
+
+        function showPopup(data) {
+          const popup = document.createElement('div');
+          popup.className = 'fixed top-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50';
+
+          popup.innerHTML = `
+              <div class="bg-white rounded-lg overflow-hidden w-[650px]">
+                  <div class="flex justify-center p-3 bg-gray-300">
+                      <h1>Do you really want to delete ${data.name} ?</h1>
+                  </div>
+                  <form  method="POST" >
+                    {% csrf_token %}
+                       <div class="py-3">
+                          <ul>
+                              <li class="flex justify-between border-b-[1px] border-black/60 px-4 py-1">
+                                  <h1>Id Card Type Name</h1>
+                                  <h1>${data.name}</h1>
+                              </li>
+
+                          </ul>
+                      </div>
+                      <div class="px-4 py-2 flex flex-col">
+                        <input type="hidden" name="shift_id" value="${data.id}">
+                      </div>
+                      <div class="flex justify-end gap-4 items-center bg-gray-300 p-2">
+                        <div
+                          class="border-2 border-primary px-4 py-2 text-sm font-bold rounded-lg close-room-edit cursor-pointer"
+                        >
+                          No
+                        </div>
+                        <a
+                        href="/delete_shift/${data.id}"
+
+                          class="bg-primary px-4 py-2 text-sm font-bold rounded-lg text-white cursor-pointer"
+                        >
+                          Yes
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          `;
+
+          document.body.appendChild(popup);
+
+          popup.querySelector('.close-room-edit').addEventListener('click', () => {
+              document.body.removeChild(popup);
+          });
+      }
+      });
+
+      const roomTypeSelect = document.getElementById('room_type');
+      const roomNameSelect = document.getElementById('room_name');
+
+      roomTypeSelect.addEventListener('change', () => {
+        const selectedRoomType = roomTypeSelect.value;
+        const roomNameOptions = roomNameSelect.options;
+
+        for (let i = 0; i < roomNameOptions.length; i++) {
+          const option = roomNameOptions[i];
+          const roomType = option.dataset.roomType;
+          const status = option.dataset.status === 'False';
+
+          if (selectedRoomType === '' || (roomType === selectedRoomType && status)) {
+            option.style.display = 'block';
+          } else {
+            option.style.display = 'none';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

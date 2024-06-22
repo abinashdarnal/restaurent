@@ -1,0 +1,192 @@
+{% extends "main.html" %} {% block content %}
+<div class="w-full h-full grid grid-cols-12 bg-gray-100">
+  {% include "sidenav.html" %}
+  <div
+    class="col-span-10 p-5 flex flex-col gap-3 overflow-auto overflow-x-hidden"
+  >
+    <form method="POST" class="flex flex-col gap-5">
+      {%csrf_token%}
+      <div class="bg-white w-full p-5 rounded-lg">
+        <div class="mb-5 font-bold">
+          <h1>Room Informations:</h1>
+        </div>
+        <div class="flex flex-col gap-5 w-full">
+          <div class="grid grid-cols-2 gap-5 text-sm">
+            <input
+            required
+              type="hidden"
+              name="receptionist"
+              value="{{user.username}}"
+            />
+            <select
+            required
+              name="room_type"
+              id="room_type"
+              class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer"
+            >
+              <option >{{PlaceholderRoom.room_type.room_type}}</option>
+              {% comment %} {% for roomtype in RoomType %}
+              <option
+                value="{{roomtype.room_type}}"
+               
+                class="bg-white text-black hover:bg-primary hover:text-white"
+              >
+                {{roomtype.room_type}}
+              </option>
+              {% endfor %} {% endcomment %}
+            </select>
+            <select
+            required
+              name="room_name"
+              id="room_name"
+              class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer"
+            >
+              <option >{{PlaceholderRoom.room_name}}</option>
+              {% comment %} {% for room in Room %}
+              <!---->
+              <option
+                value="{{room.room_name}}"
+                data-room-type="{{ room.room_type.room_type }}"
+                data-status="{{ room.status }}"
+               
+                class="bg-white text-black hover:bg-primary hover:text-white"
+              >
+                {% if room.status %}
+                <!---->
+                {% else %} {{room.room_name}}
+                <!---->
+                {% endif %}
+              </option>
+              {% endfor %} {% endcomment %}
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-5 text-sm">
+            <div class="flex gap-3 items-center justify-between w-full">
+              <label for="check_in" class="font-bold">Check In</label>
+              <input
+              required
+                type="date"
+                id="check_in"
+                placeholder="Check In "
+                value="{{PlaceholderCustomer.check_in}}"
+                min="1997-01-01"
+                max="2030-12-31"
+                name="check_in"
+                class="bg-gray-100 p-2 rounded-lg focus:outline-none w-[70%]"
+              />
+            </div>
+            <div class="flex gap-3 items-center justify-between w-full">
+              <label for="check_out" class="font-bold">Check Out</label>
+              <input
+              required
+                type="date"
+                name="check_out"
+                id="check_out"
+                placeholder="Check Out "
+                value="{{PlaceholderCustomer.check_out}}"
+                min="1997-01-01"
+                max="2030-12-31"
+                class="bg-gray-100 p-2 rounded-lg focus:outline-none w-[70%]"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="text-sm flex flex-col gap-2 font-bold mt-5">
+          <h1>Total Days: <span id="total_days">0</span> Days</h1>
+          <h1>Price: Rs <span id="room_price">0</span></h1>
+          <h1 class="flex gap-3">
+            Total Price: Rs
+            <input
+            required
+              type="tel"
+              name="total_cost"
+              id="total_cost"
+              value="0 "
+              readonly
+              class="bg-transparent"
+            />
+          </h1>
+        </div>
+      </div>
+      <div class="bg-white w-full p-5 rounded-lg">
+        <div class="mb-5 font-bold">
+          <h1>Guest Details:</h1>
+        </div>
+        <div class="flex flex-col gap-5 w-full">
+          <div class="grid grid-cols-2 gap-5 text-sm">
+            <input
+            required
+              type="text"
+              name="name"
+              class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+              value="{{PlaceholderCustomer.name}}"
+              placeholder="Name"
+            />
+            <input
+            required
+              type="text"
+              name="address"
+              class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+               value="{{PlaceholderCustomer.address}}"
+              placeholder="Address"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-5 text-sm">
+            <input
+            required
+              type="tel"
+              name="contact"
+              class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+               value="{{PlaceholderCustomer.contact}}"
+              placeholder="Contact"
+            />
+            <input
+            required
+              type="email"
+              name="email"
+              class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+               value="{{PlaceholderCustomer.email}}"
+              placeholder="Email"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-5 text-sm">
+            <select
+            required
+              name="id_card_type"
+              id="id_card_type"
+              class="bg-primary text-white p-2 rounded-lg focus:outline-none cursor-pointer"
+            >
+              <option selected>Select Id Card Type</option>
+              {% for idcard in IdCardType %}
+              <option
+                value="{{PlaceholderCustomer.id_card_type.name}}"
+                {% if PlaceholderCustomer.id_card_type.name == idcard.name %} selected {% endif %}
+                class="bg-white text-black hover:bg-primary hover:text-white"
+              >
+                {{idcard.name}}
+              </option>
+              {% endfor %}
+            </select>
+            <input
+            required
+              type="tel"
+              name="id_card_no"
+              class="bg-gray-100 p-2 rounded-lg focus:outline-none"
+              value="{{PlaceholderCustomer.id_card_no}}"
+              placeholder="Selected Id Card Number"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="bg-primary rounded-lg text-white font-bold text-sm px-4 py-2"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

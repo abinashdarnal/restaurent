@@ -1,0 +1,33 @@
+<div class="col-span-2 bg-primary py-5">
+  <div class="mb-4 flex">
+    <div class="flex items-center gap-3 text-white w-full px-10 capitalize">
+      <i class="fa-solid fa-user"></i>
+      {{user.username}}
+    </div>
+  </div>
+
+  <ul class="flex flex-col sgap-2 items-end h-full capitalize text-sm">
+    {% for item in SideNav %}{% if user.is_staff or item.admin == False %}
+    <li>
+      <a href="/{{ item.link }}">
+        <div
+          class="hover:bg-white w-[200px] px-4 py-2 hover:text-primary text-white font-semibold rounded-l-lg flex items-center gap-2"
+        >
+          <i class="{{ item.icons }}"></i>
+          <h1>{{ item.name }}</h1>
+        </div>
+      </a>
+    </li>
+    {% endif %} {% endfor %}
+    <li>
+      <a href="{% url 'logout' %}">
+        <div
+          class="hover:bg-white w-[200px] px-4 py-2 hover:text-primary text-white font-semibold rounded-l-lg flex items-center gap-2"
+        >
+          <i class="fa-solid fa-sign-out"></i>
+          <h1>Log Out</h1>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

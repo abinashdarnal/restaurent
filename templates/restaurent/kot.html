@@ -1,0 +1,214 @@
+{% extends "restaurent/index.html" %} {% block body %}
+<div class="p-4 h-full w-full overflow-auto">
+  <div class="flex justify-between items-center mb-3">
+    <div>
+      <h1 class="font-bold text-xl text-outline text-white">
+        Restaurent Management System
+      </h1>
+    </div>
+    <div>
+      <a href="/restaurent/table"
+        class="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold flex gap-2 items-center">
+        <i class="fa-solid fa-chevron-left"></i>
+        Back to Table View
+      </a>
+    </div>
+  </div>
+  <div class="flex justify-between items-center">
+    <form action="" class="">
+      <input type="text" name="search" id="search" placeholder="search"
+        class="bg-transparent border-2 border-grey-600 rounded-lg py-0.5 px-2" />
+      <button type="submit" class="bg-primary px-2 py-1 text-white rounded-lg">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    <div class="flex items-center gap-3">
+      <!-- <a href="/restaurent/table" class="bg-primary px-4 py-2 text-white rounded-lg text-sm font-bold">
+        New Order
+      </a> -->
+      {% comment %}
+      <div class="flex items-center gap-2">
+        <div class="w-3 aspect-square bg-gray-100 rounded-full"></div>
+        <h1>Dine In</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-3 aspect-square bg-yellow-300 rounded-full"></div>
+        <h1>Delivery</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-3 aspect-square bg-red-400 rounded-full"></div>
+        <h1>Pick Up</h1>
+      </div>
+      {% endcomment %}
+    </div>
+  </div>
+
+  <div class="grid grid-cols-4 gap-4 text-sm my-5 overflow-auto">
+    {% for data in Data %}
+    <!---->
+
+    <div class="border-2 h-fit w-full">
+      <div class="flex justify-around items-center w-full bg-blue-400 font-bold text-white">
+        <div class="py-2">Table {{ data.item.0.order.table.name }}</div>
+        <div class="py-2">kot No.{{ data.item.0.order.id }}</div>
+      </div>
+      <table class="w-full">
+        <tr class="flex justify-between items-center px-4 bg-gray-100 py-2 font-bold w-full">
+          <th>Meal Item</th>
+          <th>Qty</th>
+          <th>Is Ready ?</th>
+        </tr>
+        {% for item in data.item %}
+
+        <tr class="flex justify-between items-center px-4 py-2 text-xs font-medium">
+          <td>
+            <h1>{{item.meal.name}}</h1>
+          </td>
+          <td>
+            <h1>{{item.quantity}}</h1>
+          </td>
+          <td>
+            {%if item.is_ready%}
+            <div class="text-green-400 text-basic">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            {%else%}
+            <a href=" /restaurent/order_ready/{{item.id}}">
+              <input type="checkbox" name="" id="{{ item.id }}" onchange="handleCheckboxChange(this, '{{ item.id }}')"
+                class="bg-green-400" {%if item.is_ready%} checked disable {% endif %} />
+            </a>
+            {%endif%}
+          </td>
+        </tr>
+        {% endfor %} {% comment %}
+        <div class="flex justify-between items-center p-2">
+          <div
+            class="w-8 aspect-square flex justify-center items-center rounded-full border-2 border-black cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="bg-primary text-sm font-bold px-4 py-2 text-white rounded-lg cursor-pointer">
+            Meal is Ready
+          </div>
+        </div>
+        {% endcomment %}
+      </table>
+    </div>
+
+    <!---->
+    {% endfor %} {% comment %}
+    <div class="border-2 h-fit">
+      <div class="flex justify-around items-center w-full bg-yellow-400 font-bold text-white">
+        <div class="py-2">6 Dine In</div>
+        <div class="py-2">kot No. 2</div>
+        <div class="py-2">06:50</div>
+      </div>
+      <div>
+        <div class="flex justify-between items-center px-4 bg-gray-100 py-2 font-bold">
+          <h1>Meal Item</h1>
+          <h1>Qty</h1>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 text-xs font-medium">
+          <h1>Veg Manchurian</h1>
+          <h1>1</h1>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 text-xs font-medium">
+          <h1>Veg Manchurian</h1>
+          <h1>1</h1>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 text-xs font-medium">
+          <h1>Veg Manchurian</h1>
+          <h1>1</h1>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 text-xs font-medium">
+          <h1>Veg Manchurian</h1>
+          <h1>1</h1>
+        </div>
+        <div class="p-4 flex justify-center items-center bg-gray-100 text-sm">
+          <h1>veg manchurian with less spicy</h1>
+        </div>
+        <div class="flex justify-between items-center p-2">
+          <div
+            class="w-8 aspect-square flex justify-center items-center rounded-full border-2 border-black cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="bg-primary text-sm font-bold px-4 py-2 text-white rounded-lg cursor-pointer">
+            Meal is Ready
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endcomment %}
+  </div>
+  <div id="toast"
+    class="fixed top-4 hidden right-4 transform -translate-x-1/2 bg-gray-800 text-white text-center rounded-md px-4 py-2 hidden">
+    <span id="toastMessage">Checkbox is checked</span>
+    <button class="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="hideToast()">
+      OK
+    </button>
+  </div>
+  <script type="application/json" id="items-data">
+    {{ Data|json_script:"items-data" }}
+  </script>
+</div>
+{% endblock body %} {% block script %}
+<script>
+
+  function handleCheckboxChange(checkbox, id) {
+    if (checkbox.checked) {
+      showToast("Checkbox with ID " + id + " is checked");
+      window.location.href = `/restaurent/order_ready/${id}`;
+      checkbox.disabled = true; // Disable the checkbox
+      saveState(id, true);
+    } else {
+      checkbox.disabled = false;
+      saveState(id, false);
+    }
+  }
+
+  function showToast(message) {
+    var toast = document.getElementById("toast");
+    var toastMessage = document.getElementById("toastMessage");
+    toastMessage.textContent = message;
+    toast.classList.remove("hidden");
+    toast.classList.add("block");
+  }
+
+  function hideToast() {
+    var toast = document.getElementById("toast");
+    toast.classList.remove("block");
+    toast.classList.add("hidden");
+  }
+
+  // Function to save state in local storage
+  function saveState(id, isChecked) {
+    localStorage.setItem("checkbox_" + id, isChecked);
+  }
+
+  // Function to retrieve state from local storage
+  function loadState(id) {
+    return localStorage.getItem("checkbox_" + id);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const itemsData = JSON.parse(
+      document.getElementById("items-data").textContent
+    );
+
+    itemsData.forEach((data) => {
+      data.item.forEach((item) => {
+        const savedState = loadState(item.is_ready.toString());
+        const checkbox = document.getElementById(item.id.toString());
+
+        if (savedState === "true" || item.is_ready) {
+          checkbox.checked = true;
+          checkbox.disabled = true;
+        } else {
+          checkbox.checked = false;
+          checkbox.disabled = false;
+        }
+      });
+    });
+  });
+</script>
+{% endblock script %}

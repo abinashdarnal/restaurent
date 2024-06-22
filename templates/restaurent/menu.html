@@ -1,0 +1,331 @@
+{% extends "restaurent/index.html" %} {% block body %}
+<div class="grid grid-cols-12 h-full w-full">
+  {% include "restaurent/menunav.html" with Nav=Nav%}
+  <div class="col-span-7 h-full flex flex-col gap-4 p-5">
+    <div class="h-[5%] flex justify-between items-center">
+      <form action="" class="">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search"
+          class="bg-transparent border-2 border-grey-600 rounded-lg py-0.5 px-2"
+        />
+        <button
+          type="submit"
+          class="bg-primary px-2 py-1 text-white rounded-lg"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div class="flex items-center gap-4">
+        <a
+          href="/restaurent/kot"
+          class="bg-primary px-4 py-2 text-white rounded-lg text-sm font-bold"
+        >
+          Kot View
+        </a>
+        <a
+          href="/restaurent/table"
+          class="bg-primary px-4 py-2 text-white rounded-lg text-sm font-bold"
+        >
+          New Order
+        </a>
+      </div>
+    </div>
+    <div
+      class="h-[85vh] grid grid-cols-4 gap-3 justify-start overflow-auto text-sm font-bold"
+    >
+      {%if Search%}
+      <!---->
+      {% for data in Search %}
+      <div
+        onclick="openPopup('{{ data.price }}','{{data.name}}')"
+        class="h-[140px] border-2 border-grey-600 rounded-lg flex flex-col items-center justify-center gap-3 p-4 meal-order cursor-pointer"
+      >
+        <h1 class="text-center">{{data.name}}</h1>
+        <div class="w-[60px] aspect-square overflow-hidden">
+          <img src="{{data.image}}" alt="" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      {% endfor %}
+      <!---->
+      {% elif Meal %}
+      <!---->
+      {% for data in Meal %}
+      <div
+        onclick="openPopup('{{ data.price }}','{{data.name}}')"
+        class="h-[140px] border-2 border-grey-600 rounded-lg flex flex-col items-center justify-center gap-3 p-4 meal-order cursor-pointer"
+      >
+        <h1 class="text-center">{{data.name}}</h1>
+        <div class="w-[60px] aspect-square overflow-hidden">
+          <img src="{{data.image}}" alt="" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      {% endfor %}
+      <!---->
+      {% else %}
+      <!---->
+      {% for data in Data.mealitem %}
+      <div
+        onclick="openPopup('{{ data.price }}','{{data.name}}')"
+        class="h-[140px] border-2 border-grey-600 rounded-lg flex flex-col items-center justify-center gap-3 p-4 meal-order cursor-pointer"
+      >
+        <h1 class="text-center">{{data.name}}</h1>
+        <div class="w-[60px] aspect-square overflow-hidden">
+          <img src="{{data.image}}" alt="" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      {% endfor %}
+      <!---->
+      {% endif %}
+    </div>
+  </div>
+  <div
+    class="col-span-3 bg-gray-50 p-5 flex flex-col justify-between gap-[100px] overflow-x-hidden overflow-y-auto"
+  >
+    <div>
+      <div class="flex justify-between items-center">
+        <h1 class="font-bold">Current Order</h1>
+        <div
+          class="bg-btn1 text-primary text-sm font-semibold capitalize px-3 py-1"
+        >
+          clear all
+        </div>
+      </div>
+      <table class="w-full mt-6 text-xs font-medium h-full">
+        <thead>
+          <tr class="bg-gray-300 text-sm">
+            <th class="px-3 py-2"></th>
+            <th class="px-3 py-2">Items</th>
+            <th class="px-3 py-2">QTY</th>
+            <th class="px-3 py-2">Cost</th>
+          </tr>
+        </thead>
+        <tbody class="h-[70%]">
+          {% for order in Order %}
+          <tr class="">
+            <td class="text-center">
+              {% if order.is_ready %}
+              <div class="text-green-400 text-xl">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              {% else %}
+              <div
+                onclick="cancelMealOpen('{{order.id}}','{{order.meal.name}}','{{order.price}}','{{table}}','{{customer}}','{{Category}}')"
+                class="text-red-400 text-xl"
+              >
+                <i class="fa-solid fa-circle-xmark"></i>
+              </div>
+              {% endif %}
+            </td>
+            <td class="text-center">{{order.meal.name}}</td>
+            <td class="text-center">{{order.quantity}}</td>
+            <td class="text-center">Rs. {{order.price}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="font-semibold flex justify-between py-4">
+        <h1>Total</h1>
+        <p>Rs. {{Total}}</p>
+      </div>
+      <button onclick="printBill({{ Order.0.order.id }})">
+        <div class="bg-primary text-white w-full py-2 px-4 w-full">Payment</div>
+      </button>
+
+      {% comment %}
+      <div class="bg-primary text-white w-full py-2 px-4">
+        <a
+          href="/restaurent/orders/{{Order.0.order.id}}"
+          class="flex justify-center items-center w-full"
+          >Payment</a
+        >
+      </div>
+      {% endcomment %}
+    </div>
+  </div>
+  <div
+    id="cancelMeal"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+  >
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+      <span
+        class="absolute top-2 right-2 text-gray-500 cursor-pointer text-xl"
+        onclick="closeOrderPopup()"
+      >
+        <i class="fa-solid fa-circle-xmark"></i>
+      </span>
+      <div class="space-y-4 mt-3">
+        <div class="flex justify-between items-center">
+          <h1 id="question" class="text-center"></h1>
+        </div>
+      </div>
+      <div class="flex justify-end pt-3 text-sm text-white font-bold">
+        <a id="delete-link" class="bg-red-500 px-4 py-2 rounded-lg">Delete</a>
+      </div>
+    </div>
+  </div>
+  <div
+    id="popup"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+  >
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+      <span
+        class="absolute top-2 right-2 text-gray-500 cursor-pointer"
+        onclick="closePopup()"
+        >&times;</span
+      >
+      <form method="POST" class="space-y-4">
+        {% csrf_token %}
+        <div class="flex justify-center items-center">
+          <h1 class="text-sm font-bold">
+            Order for {{customer}} at {{table_name}}
+          </h1>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            required
+            read-only
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            required
+            read-only
+          />
+        </div>
+        <div class="flex justify-between items-center gap-3">
+          <button
+            type="button"
+            onclick="decreaseQuantity()"
+            class="flex justify-center items-center w-10 aspect-square bg-btn1 rounded-full"
+          >
+            <h1 class="text-primary">-</h1>
+          </button>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            value="1"
+            min="1"
+            required
+            oninput="updatePrice()"
+          />
+          <button
+            type="button"
+            onclick="increaseQuantity()"
+            class="flex justify-center items-center w-10 aspect-square bg-btn1 rounded-full"
+          >
+            <h1 class="text-primary">+</h1>
+          </button>
+        </div>
+        {% comment %}
+        <input
+          type="hidden"
+          id="tableId"
+          name="order_id"
+          value="{{order_id}}"
+        />
+        {% endcomment %}
+        <button
+          type="submit"
+          class="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-blue-600"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  {% endblock body %}
+  <!---->
+  {% block script %}
+  <script>
+    let originalPrice = 0;
+
+    function openPopup(price, name) {
+      originalPrice = parseFloat(price); // Store the original price
+      document.getElementById("name").value = name;
+      document.getElementById("price").value = originalPrice; // Set the original price in the price input
+      document.getElementById("quantity").value = 1; // Reset the quantity to 1
+      document.getElementById("popup").classList.remove("hidden");
+    }
+
+    function closePopup() {
+      document.getElementById("popup").classList.add("hidden");
+    }
+
+    function decreaseQuantity() {
+      var quantityInput = document.getElementById("quantity");
+      var currentValue = parseInt(quantityInput.value);
+      if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+        updatePrice();
+      }
+    }
+
+    function increaseQuantity() {
+      var quantityInput = document.getElementById("quantity");
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updatePrice();
+    }
+
+    function updatePrice() {
+      var quantity = parseInt(document.getElementById("quantity").value);
+      var totalPrice = originalPrice * quantity;
+      document.getElementById("price").value = totalPrice.toFixed(2); // Update the total price and format it
+    }
+
+    function cancelMealOpen(id, name, price, table, customer, catName) {
+      document.getElementById(
+        "question"
+      ).innerHTML = `Do you want to delete the order ${name} of Rs ${price} ?`;
+      document.getElementById(
+        "delete-link"
+      ).href = `/restaurent/cancel_order/${id}/${table}/${customer}/${catName}`;
+      document.getElementById("cancelMeal").classList.remove("hidden");
+    }
+
+    function closeOrderPopup() {
+      document.getElementById("cancelMeal").classList.add("hidden");
+    }
+
+    function printBill(orderId) {
+      // Open a new window with the PDF file for printing
+      var printWindow = window.open(`/restaurent/orders/${orderId}`, "_blank");
+
+      // Check if the window opened successfully
+      if (printWindow) {
+        // Wait for the PDF to load and then print
+        printWindow.onload = function () {
+          printWindow.print();
+
+          // Add an event listener for the onafterprint event
+          printWindow.onafterprint = function () {
+            // Redirect the current window to a different URL
+            //window.location.href = `/restaurent/table`;
+            window.location.href = `/restaurent/delete_order_after_payment/${orderId}`;
+
+            // Close the print window
+            printWindow.close();
+          };
+        };
+      } else {
+        // Handle the case where the window could not be opened
+        alert("Popup blocked! Please allow popups for this website.");
+      }
+    }
+  </script>
+  {% endblock script %}
+</div>

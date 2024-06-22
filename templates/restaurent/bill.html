@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Invoice</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 1in;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12pt;
+        line-height: 1.5;
+      }
+      .header,
+      .footer {
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+      }
+       .invoice-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+       .invoice-table th,
+      .invoice-table td {
+        {% comment %} border: 1px solid #000; {% endcomment %}
+        padding: 8px;
+        text-align: left;
+      }
+      {% comment %} .invoice-table th {
+        background-color: #f2f2f2;
+      } {% endcomment %}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>KB restaurant</h1>
+      <p>{{restaurant_address}}</p>
+      <p>{{restaurant_contact}}</p>
+    </div>
+    <h2>Invoice</h2>
+    <p>Invoice Number: {{ bill_data.invoice_number }}</p>
+    <p>Date: {{ bill_data.date }}</p>
+    <p>Customer Name: {{ bill_data.customer_name }}</p>
+    <p>Customer Contact: {{ bill_data.customer_contact }}</p>
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in bill_data.order_items %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <!-- Use forloop.counter for index -->
+          <td>{{ item.1 }}</td>
+          <!-- Assuming item.1 is name -->
+          <td>{{ item.2 }}</td>
+          <!-- Assuming item.2 is quantity -->
+          <td>{{ item.3 }}</td>
+          <!-- Assuming item.3 is rate -->
+          <td>{{ item.4 }}</td>
+          <!-- Assuming item.4 is price -->
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h3>Total Amount: {{ bill_data.total_amount }}</h3>
+    <div class="footer">
+      <p>Thank you for your business!</p>
+    </div>
+  </body>
+</html>
