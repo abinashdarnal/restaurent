@@ -11,7 +11,7 @@ from django.utils.deprecation import MiddlewareMixin
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
-
+from django.db.models import Sum
 from io import BytesIO
 
 
@@ -19,24 +19,30 @@ from io import BytesIO
 # Create your views here.
 def delete_order_after_payment(request, order_id):
     order = get_object_or_404(OrderItem, order__id = order_id)
+    print(order.order.customer.name)
+    print(order.order.customer.phone)
+    print(order.price)
+    print(order.order.table.name)
+    print(order.order.updated_at)
     
-    print(order)
-    print(order.order.table.id)
+    table = get_object_or_404(TableData, id = order.order.table.id)
+    table.occupied = False
+    table.save()
+     
+    save_order = BillReport(
+        customer = order.order.customer.name,
+        phone = order.order.customer.phone,
+        total_bill = order.price,
+        table = order.order.table.name,
+        order_date = order.order.updated_at, 
+    )
+    
+    save_order.save()
+    order.delete()
     
     return redirect("/restaurent/table")
 
 
-# def delete_order_after_payment(request, order_id):
-#     if request.method == 'POST':
-        
-#         order = OrderItem.objects.filter(order__id = order_id).first()
-#         order_item = OrderItemSerializers(order, many=True).data
-#         print(order_item)
-#         # print(order_item.order.table.id)
-        
-#         # order_item.delete()
-        
-#         return JsonResponse({'message': f'Order {order_id} deleted successfully'})
     
 
 def generate_pdf(html_content, file_path):
@@ -141,12 +147,12 @@ class RefreshPageMiddleware(MiddlewareMixin):
 
 SideNav=[
     
-    {"name" : "Floor" ,"link": "restaurent/addfloor", "icons" : 'fa-solid fa-bag-shopping',"admin":False },
+    {"name" : "Dashboard" ,"link": "restaurent/dashboard", "icons" : 'fa-solid fa-box' ,"admin":False},
+    {"name" : "Floor" ,"link": "restaurent/addfloor", "icons" : 'fa-solid fa-box',"admin":False },
     {"name" : "Table " ,"link": "restaurent/addtable", "icons" : 'fa-solid fa-box',"admin":False },
     {"name" : "Category " ,"link": "restaurent/addcategory", "icons" : 'fa-solid fa-box',"admin": False },
     {"name" : "Meal Item" ,"link": "restaurent/addmeal", "icons" : 'fa-solid fa-box' ,"admin":False},
     {"name" : "Table View" ,"link": "restaurent/table", "icons" : 'fa-solid fa-box' ,"admin":False},
-    # {"name" : "Menu View" ,"link": "restaurent/addmeal", "icons" : 'fa-solid fa-box' ,"admin":False},
 
 ]
 
@@ -468,22 +474,25 @@ def menu_by_view(request,table_id,customer_name,catName=None):
                 return render(request, "restaurent/menu.html", context)
           
     # customer = get_object_or_404( Customer, name = customer_name)
-    customer = Customer.objects.filter(name=customer_name).first()
+    # customer = Customer.objects.filter(name=customer_name).first()
     
-    table=TableData.objects.filter(id=table_id).first()
+    # table=TableData.objects.filter(id=table_id).first()
 
     try:
         table_occupied = get_object_or_404(TableData, id= table_id)
         table_occupied.occupied = True
         table_occupied.save()  
-        order = Order.objects.filter(customer=customer, table=table).first()
+        order = Order.objects.filter(
+            customer=Customer.objects.filter(name=customer_name).first(),
+            table=TableData.objects.filter(id=table_id).first(),
+        ).first()
         if order:
             order_id = order.id
             print(order_id)
         else:
             save_order = Order(
-                table=table,
-                customer=customer,
+                customer=Customer.objects.filter(name=customer_name).first(),
+                table=TableData.objects.filter(id=table_id).first(),
             )
             save_order.save()
             order = save_order  # Assign the new order to the order variable
@@ -493,7 +502,7 @@ def menu_by_view(request,table_id,customer_name,catName=None):
             order_items = OrderItem.objects.filter(order__id=order.id)
             
         else:
-            print("No order found or created.")
+            return redirect("/restaurent/table")
     
 
     if request.method == "POST":
@@ -516,7 +525,16 @@ def menu_by_view(request,table_id,customer_name,catName=None):
             else:
                 return redirect(f"/restaurent/menu/{table_id}/{customer_name}")
     # print(OrderItemSerializers(order_items, many=True).data )
-    total_price = sum(float(item['price']) for item in OrderItemSerializers(order_items, many=True).data )
+    total_price = sum(float(item['price']) for item in OrderItemSerializers(order_items, many=True).data)
+    
+    all_ready = all(item.is_ready for item in order_items)
+    
+    if all_ready:
+        result = True
+    else:
+        result = False
+        
+        
     if catName:
         context ={
             "SideNav":SideNav,
@@ -528,6 +546,7 @@ def menu_by_view(request,table_id,customer_name,catName=None):
             "Order":OrderItemSerializers(order_items, many=True).data,
             "Total":total_price,
             "Category":catName,
+            "AllReady": result,
 
         }
     else:
@@ -541,6 +560,7 @@ def menu_by_view(request,table_id,customer_name,catName=None):
             "Order":OrderItemSerializers(order_items, many=True).data,
             "Total":total_price,
             "Category":catName,
+            "AllReady": result,
 
 
         }
@@ -573,4 +593,32 @@ def kot_view(request):
         context,
     )    
     
- 
+    
+
+    
+def restaurent_dashboard_view(request):  
+    restaurent_status, created = OrganizationDetail.objects.get_or_create()
+
+    totalbill= BillReport.objects.aggregate(Sum('total_bill'))['total_bill__sum'] or 0
+    restaurent_status.total_revenue = totalbill
+    restaurent_status.save()
+    
+    context ={
+        "SideNav" : SideNav,
+        # "Data" : HotelReservationSerializers(HotelReservation.objects.order_by('created_at'), many=True).data,
+    #     "Reserved":RoomSerializers(Room.objects.filter(Q(status=True)), many=True ).data,
+    #     "Available":RoomSerializers(Room.objects.filter(Q(status=False)), many=True ).data,
+    #     "Booked":RoomSerializers(Room.objects.filter(Q(check_in_status=True)), many=True ).data,
+    #     "Room":RoomSerializers(Room.objects.all(), many=True ).data,
+    #     "Staff":EmployeeSerializers(Employee.objects.all(), many=True ).data,
+    #     "Complaint":ComplaintSerializers(Complaint.objects.all(), many=True ).data,
+    #     "PendingComplaint":ComplaintSerializers(Complaint.objects.filter(Q(resolve=False)), many=True ).data,
+    #     "Customer":CustomerSerializers(Customer.objects.all(), many=True ).data,
+        "OrganizationDetail":OrganizationDetailSerializers(OrganizationDetail.objects.first(), many=False ).data,
+    #     "Page" :"DashBoard",
+    }
+    return render(
+        request,
+        'restaurent/dashboard.html',
+        context,
+    )

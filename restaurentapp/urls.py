@@ -11,6 +11,7 @@ urlpatterns = [
    path('menu/<int:table_id>/<str:customer_name>', login_required(menu_by_view), name='menu_cat'),   
    path('menu/<int:table_id>/<str:customer_name>/<str:catName>', login_required(menu_by_view), name='menu_cat'),   
    path('table', login_required(table_view), name='table'),   
+   path('dashboard', login_required(restaurent_dashboard_view), name='restaurent_dashboard_view'),   
    path('kot', login_required(kot_view), name='kot'),   
    path('addtable', login_required(add_table_view), name='add_table_view'),   
    path('addfloor', login_required(add_floor_view), name='add_floor_view'),   

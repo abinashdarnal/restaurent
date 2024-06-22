@@ -78,6 +78,7 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     is_ready = models.BooleanField()
+    
 
     def __str__(self):
         return f'{self.quantity} x {self.meal.name}'
@@ -94,7 +95,16 @@ class Notification(models.Model):
     
 class BillReport(models.Model):
     id = models.BigAutoField(primary_key=True)
-    order_id = models.ForeignKey(OrderItem ,on_delete=models.CASCADE,null=True, blank=True)
+    customer = models.CharField(max_length=300, null=False , blank = False)
+    phone = models.CharField(max_length=30, null=False , blank = False)
+    table = models.CharField(max_length=30, null=False , blank = False)
+    total_bill = models.IntegerField(null=False , blank = False)
+    order_date = models.CharField(max_length=30, null=False , blank = False)
+    
+    
+    def __str__(self):
+        return self.customer
+    
     
     
 class OrganizationDetail(models.Model):
@@ -102,6 +112,8 @@ class OrganizationDetail(models.Model):
     name = models.CharField(max_length=400,null=True, blank=True )
     address = models.CharField(max_length=400,null=True, blank=True )
     phone =models.CharField(max_length=20,null=True, blank=True )
+    total_revenue = models.IntegerField(null=False , blank = False)
+
     
     def __str__(self):
         return self.name

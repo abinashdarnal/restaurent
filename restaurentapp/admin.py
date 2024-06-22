@@ -36,12 +36,13 @@ class TableDataAdmin(admin.ModelAdmin):
    list_display = ('id',"name")
    list_display_links = ('id',"name")
    
-@admin.register(BillReport)
-class BillReportAdmin(admin.ModelAdmin):
-   list_display = ('id',"order_id")
-   list_display_links = ('id',"order_id")
    
 @admin.register(OrganizationDetail)
 class OrganizationDetailAdmin(admin.ModelAdmin):
    list_display = ('id',"name","address","phone")
    list_display_links = ('id',"name","address","phone")
+   
+@admin.register(BillReport)
+class BillReportAdmin(admin.ModelAdmin):
+   list_display = ('id',"customer","phone","table","total_bill")
+   list_display_links = ('id',"customer","phone","table","total_bill")

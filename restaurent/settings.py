@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
     'django.contrib.staticfiles',
     'web',
     'restaurentapp',
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'web.middleware.LoginRequiredMiddleware',
+    # 'livereload.middleware.LiveReloadScript',
     # 'restaurentapp.middleware.RefreshPageMiddleware',
 ]
 

@@ -47,6 +47,12 @@ class OrganizationDetailSerializers(serializers.ModelSerializer):
       fields = "__all__"
       depth = 10
       
+class BillReportSerializers(serializers.ModelSerializer):
+   class Meta:
+      model = BillReport
+      fields = "__all__"
+      depth = 10
+      
 class OrderSerializers(serializers.ModelSerializer):
    order_items = OrderItemSerializers(many=True, read_only=True).data
    class Meta:

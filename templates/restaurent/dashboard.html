@@ -1,10 +1,11 @@
 {% extends "restaurent/index.html" %} {% block body %}
 <div class="w-full h-full grid grid-cols-12 bg-gray-100 overflow-hidden">
-  {% include "sidenav.html" %}
+  {% include "restaurent/sidenav.html" with SideNav=SideNav %}
   <div
     class="col-span-10 p-5 flex flex-col gap-3 overflow-auto overflow-x-hidden"
   >
     <div class="grid grid-cols-4 gap-[3px]">
+      {% comment %}
       <div class="flex flex-col justify-center items-center gap-4 bg-white p-6">
         <i class="fa-solid fa-bed text-3xl text-blue-300"></i>
         <h3 class="text-2xl font-medium text-yellow-400">{{Room|length}}</h3>
@@ -55,6 +56,7 @@
         </h3>
         <h1 class="font-semibold">Pending Complaints</h1>
       </div>
+      {% endcomment %}
     </div>
     <div class="grid grid-cols-2 gap-[3px]">
       <div class="flex flex-col justify-center items-center gap-4 bg-white p-6">
